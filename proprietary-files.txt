@@ -941,7 +941,6 @@ lib64/extractors/libmtkapeextractor.so
 lib64/extractors/libmtkasfextractor.so
 lib64/extractors/libmtkaviextractor.so
 lib64/extractors/libmtkflvextractor.so
-lib64/extractors/libmtkmkvextractor.so
 lib64/extractors/libmtkmp3extractor.so
 lib64/extractors/libmtkmpeg2extractor.so
 
@@ -1217,27 +1216,20 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 -framework/mediatek-ims-common.jar
 -framework/mediatek-ims-extension-plugin.jar
 -framework/mediatek-ims-legacy.jar
--framework/mediatek-ims-wwop-common.jar
 -framework/mediatek-telecom-common.jar
 -framework/mediatek-telephony-base.jar
 -framework/mediatek-telephony-common.jar
 lib/libmtk_vt_service.so
 lib/libmtk_vt_wrapper.so
-lib/vendor.mediatek.hardware.mtkradioex@1.0.so
 lib/vendor.mediatek.hardware.mms@1.0.so
 lib/vendor.mediatek.hardware.mms@1.1.so
 lib/vendor.mediatek.hardware.mms@1.2.so
 lib/vendor.mediatek.hardware.mms@1.3.so
-lib/vendor.mediatek.hardware.nwk_opt@1.0.so
-lib/vendor.mediatek.hardware.videotelephony@1.0.so
 lib64/libmtk_vt_wrapper.so
-lib64/vendor.mediatek.hardware.mtkradioex@1.0.so
 lib64/vendor.mediatek.hardware.mms@1.0.so
 lib64/vendor.mediatek.hardware.mms@1.1.so
 lib64/vendor.mediatek.hardware.mms@1.2.so
 lib64/vendor.mediatek.hardware.mms@1.3.so
-lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
-lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 vendor/lib/libvsim.so
 
@@ -1306,7 +1298,6 @@ vendor/lib64/hw/vibrator.mt6853.so
 
 # WiFi
 bin/iwpriv
--framework/mtk-wifi-service.jar
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 -vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 -vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
