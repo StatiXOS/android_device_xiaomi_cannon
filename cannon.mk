@@ -404,7 +404,7 @@ PRODUCT_PACKAGES += \
    android.hardware.usb@1.0 \
    android.hardware.usb@1.1 \
    android.hardware.usb@1.1-impl \
-   android.hardware.usb@1.1-service \
+   android.hardware.usb@1.0-service.cannon \
    android.hardware.usb.gadget@1.1 \
    android.hardware.usb.gadget@1.1-impl \
    android.hardware.usb.gadget@1.1-service
