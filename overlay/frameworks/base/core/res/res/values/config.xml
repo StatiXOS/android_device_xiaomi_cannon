@@ -442,6 +442,9 @@
          backlight values -->
     <bool name="config_displayBrightnessBucketsInDoze">true</bool>
 
+    <!-- If device supports pickup/lift gesture -->
+    <bool name="config_dozePulsePickup">true</bool>
+
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
         <item>0</item> <!-- COLOR_MODE_NATURAL -->
