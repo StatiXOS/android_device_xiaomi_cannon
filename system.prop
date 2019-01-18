@@ -56,7 +56,6 @@ vendor.rild.libpath=mtk-ril.so
 
 # Surfaceflinger
 debug.sf.disable_backpressure=1
-ro.sf.lcd_density=440
 
 # Touchfeature
 ro.vendor.touchfeature.type=2
