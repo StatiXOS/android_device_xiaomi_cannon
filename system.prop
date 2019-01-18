@@ -19,7 +19,6 @@ sys.displayfeature_hidl=true
 vendor.displayfeature.entry.enable=true
 ro.vendor.eyecare.threshold=-1
 ro.vendor.xiaomi.bl.poll=true
-ro.sf.lcd_density=440
 persist.lm.em.enabled=1
 ro.vendor.colorpick_adjust=true
 ro.vendor.all_modes.colorpick_adjust=true
