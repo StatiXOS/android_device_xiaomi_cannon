@@ -1,6 +1,9 @@
 # Audio
 aaudio.mmap_policy=2
 aaudio.mmap_exclusive_policy=2
+af.fast_track_multiplier=1
+audio.adm.buffering.ms=3
+audio_hal.period_multiplier=2
 ro.vendor.audio.soundfx.type=mi
 ro.vendor.audio.soundfx.usb=true
 ro.vendor.audio.hifi=true
@@ -25,6 +28,7 @@ persist.audio.button_jack.switch=0
 ro.vendor.audio.voice.volume.boost=none
 ro.vendor.audio.sos=true
 ro.vendor.audio.game.effect=true
+vendor.audio.adm.buffering.ms=3
 
 # Bluetooth
 vendor.bluetooth.ldac.abr=true
