@@ -150,7 +150,6 @@ include device/mediatek/sepolicy/sepolicy.mk
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-BOARD_VNDK_VERSION := current
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/cannon/BoardConfigVendor.mk
