@@ -167,5 +167,8 @@ BOARD_VNDK_VERSION := current
 
 TARGET_USES_MKE2FS := true
 
+# Wifi
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 # Inherit from the proprietary version
 -include vendor/xiaomi/cannon/BoardConfigVendor.mk
