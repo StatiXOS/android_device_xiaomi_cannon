@@ -3,6 +3,9 @@
 #
 # SPDX-License-Identifer: Apache-2.0
 
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/cannon-vendor.mk)
 
