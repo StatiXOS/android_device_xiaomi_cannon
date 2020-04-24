@@ -429,7 +429,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libwifi-hal \
-    TetheringConfigOverlay
+    TetheringConfigOverlay \
+    WifiOverlay
 
 PRODUCT_BOOT_JARS += \
     mtk-wifi-service
