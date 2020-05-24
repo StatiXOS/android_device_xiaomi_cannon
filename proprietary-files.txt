@@ -738,9 +738,7 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.beanpod.so
-vendor/lib/hw/gatekeeper.default.so
 vendor/lib64/hw/gatekeeper.beanpod.so
-vendor/lib64/hw/gatekeeper.default.so
 
 # Graphics
 vendor/lib/egl/egl.cfg
