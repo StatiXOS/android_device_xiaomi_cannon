@@ -1107,3 +1107,8 @@ service charger /system/bin/charger
     group system graphics
     seclabel u:r:healthd:s0
 
+on property:persist.sys.cannon.dt2w=0
+    exec /system/bin/sendevent /dev/input/event2 0 1 4
+
+on property:persist.sys.cannon.dt2w=1
+    exec /system/bin/sendevent /dev/input/event2 0 1 5
