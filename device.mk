@@ -160,6 +160,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey \
     android.hardware.drm@1.3-service.widevine
 
+# DT2W
+PRODUCT_PACKAGES += \
+    DT2W-Service-Cannon
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
