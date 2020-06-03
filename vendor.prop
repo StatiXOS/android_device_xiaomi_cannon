@@ -243,3 +243,6 @@ wifi.interface=wlan0
 wifi.concurrent.interface=
 wifi.direct.interface=p2p0
 wifi.tethering.interface=ap0
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
