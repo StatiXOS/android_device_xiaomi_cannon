@@ -26,6 +26,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 # Assert
 TARGET_OTA_ASSERT_DEVICE := cannon,cannong
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := cannon
 TARGET_NO_BOOTLOADER := true
