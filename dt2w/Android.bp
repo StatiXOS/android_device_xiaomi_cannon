@@ -27,5 +27,16 @@ android_app {
 
     optimize: {
         enabled: false,
-    }
+    },
+
+    required: [
+        "privapp-permissions_org.lineageos.dt2w.cannon"
+    ]
+}
+
+prebuilt_etc {
+    name: "privapp-permissions_org.lineageos.dt2w.cannon",
+    sub_dir: "permissions",
+    src: "privapp-permissions_org.lineageos.dt2w.cannon.xml",
+    filename_from_src: true,
 }
