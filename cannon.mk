@@ -428,7 +428,8 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.2
 
 PRODUCT_PACKAGES += \
-    libwifi-hal
+    libwifi-hal \
+    TetheringConfigOverlay
 
 PRODUCT_BOOT_JARS += \
     mtk-wifi-service
