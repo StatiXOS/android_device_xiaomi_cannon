@@ -53,4 +53,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayouts/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/configs/keylayouts/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
 
+# Priv-app Permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/product-permissions-mediatek.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/product-permissions-mediatek.xml
+
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/device-vendor.mk)
