@@ -11,6 +11,11 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/cannon/cannon-vendor.mk)
 
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
