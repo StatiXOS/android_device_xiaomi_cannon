@@ -51,6 +51,21 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
 
+# Init
+PRODUCT_PACKAGES += \
+    init.cannon.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6853.rc \
+    init.mt6853.usb.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    multi_init.rc \
+    fstab.mt6853 \
+    ueventd.mtk.rc
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
