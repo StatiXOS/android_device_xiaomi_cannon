@@ -137,6 +137,11 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
 
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-impl-2.1
+
 # Init
 PRODUCT_PACKAGES += \
     init.cannon.rc \
