@@ -123,6 +123,12 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
+# Camera
+PRODUCT_PACKAGES += \
+    Camera2 \
+    android.hardware.camera.provider@2.6-impl \
+    android.hardware.camera.provider@2.6-service
+
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
