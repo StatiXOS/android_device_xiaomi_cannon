@@ -1,8 +1,6 @@
 import /vendor/etc/init/init.batteryd.rc
 import init.mi_thermald.rc
 
-mkdir /data/misc/sensors 0664 system system
-
 service msensord /system/bin/msensord
     user system
     group system
@@ -58,6 +56,7 @@ on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
     write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
+    mkdir /data/misc/sensors 0664 system system
 
 on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
