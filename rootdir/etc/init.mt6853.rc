@@ -110,7 +110,8 @@ on fs
     # mount fstab
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/tracing/trace_marker "B|1|Mount"
-    mount_all --early
+    mount_all /vendor/etc/fstab.mt6853 --early
+    mount_all /vendor/etc/fstab.mt6853 --late
     exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
