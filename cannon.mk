@@ -222,6 +222,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/product-permissions-mediatek.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/product-permissions-mediatek.xml
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.2 \
+    android.hardware.radio@1.5 \
+    android.hardware.radio.config@1.1
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
