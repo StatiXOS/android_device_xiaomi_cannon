@@ -185,6 +185,7 @@ PRODUCT_PACKAGES += \
     meta_init.rc \
     multi_init.rc \
     fstab.mt6853 \
+    ramdisk-fstab.mt6853 \
     ueventd.mtk.rc
 
 # Keylayouts
