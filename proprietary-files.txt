@@ -956,16 +956,6 @@ vendor/etc/mdota/MTK_OTA_REL11.mcfota
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so
 
-# Media Extractors
-lib64/extractors/libmtkadpcmextractor.so
-lib64/extractors/libmtkalacextractor.so
-lib64/extractors/libmtkapeextractor.so
-lib64/extractors/libmtkasfextractor.so
-lib64/extractors/libmtkaviextractor.so
-lib64/extractors/libmtkflvextractor.so
-lib64/extractors/libmtkmp3extractor.so
-lib64/extractors/libmtkmpeg2extractor.so
-
 # Mediatek AEE
 system_ext/bin/aee
 system_ext/bin/aee_aed
