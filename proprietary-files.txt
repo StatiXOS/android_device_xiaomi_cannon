@@ -775,7 +775,9 @@ vendor/lib64/libhwbinder.so
 # Lights
 vendor/bin/hw/android.hardware.lights-service.mediatek
 vendor/lib/hw/lights.mt6853.so
+vendor/lib/android.hardware.light-V1-ndk_platform.so|91f2bffd793bce793b7e4852dbae7f3f4711faf0
 vendor/lib64/hw/lights.mt6853.so
+vendor/lib64/android.hardware.light-V1-ndk_platform.so|8044e0e66cdd10371802518b0d069726e3963b91
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.mt6853.so
@@ -1180,6 +1182,7 @@ vendor/lib/hw/power.default.so
 vendor/lib/hw/power.mt6853.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.6-impl.so
+vendor/lib/android.hardware.power-V1-ndk_platform.so|6557c6f026ecca479be50a34f67a06012355f886
 vendor/lib/libpowerhal.so
 vendor/lib/libpowerhalwrap_vendor.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
@@ -1195,6 +1198,7 @@ vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6853.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so
+vendor/lib64/android.hardware.power-V1-ndk_platform.so|62678973010870dbb54340dabadd63f09fd1c4b1
 vendor/lib64/android.hardware.power-service-mediatek.so
 vendor/lib64/libpowerhal.so
 vendor/lib64/libpowerhalwrap_vendor.so
