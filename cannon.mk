@@ -110,7 +110,8 @@ PRODUCT_PACKAGES += \
     audio_policy.stub \
     libaudiofoundation \
     libaudiopreprocessing \
-    libtinycompress
+    libtinycompress \
+    libtinyxml
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0 \
