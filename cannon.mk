@@ -277,6 +277,16 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2 \
     android.hardware.radio.deprecated@1.0
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0 \
+    android.hardware.sensors@2.0 \
+    android.hardware.sensors@2.0-impl \
+    android.hardware.sensors@2.0-service
+
+PRODUCT_PACKAGES += \
+    libsensorndkbridge
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0 \
@@ -306,7 +316,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # WiFi
-PRODUCT_PACKGES += \
+PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
     android.hardware.wifi@1.1 \
     android.hardware.wifi@1.0-impl \
