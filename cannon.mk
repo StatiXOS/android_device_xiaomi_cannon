@@ -113,21 +113,33 @@ PRODUCT_PACKAGES += \
     libtinycompress
 
 PRODUCT_PACKAGES += \
+    android.hardware.audio@6.0 \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
+    android.hardware.soundtrigger@2.0-core \
+    android.hardware.soundtrigger@2.3 \
     android.hardware.soundtrigger@2.3-impl \
     android.hardware.bluetooth.audio@2.0-impl
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0 \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
 # Camera
 PRODUCT_PACKAGES += \
-    Camera2 \
+    android.hardware.camera.device@3.5 \
+    android.hardware.camera.provider@2.4 \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.5 \
+    android.hardware.camera.provider@2.6 \
     android.hardware.camera.provider@2.6-impl \
     android.hardware.camera.provider@2.6-service
+
+PRODUCT_PACKAGES += \
+    Camera2
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -141,6 +153,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@4.0-impl \
     android.hardware.memtrack@1.0-impl
+
+PRODUCT_PACKAGES += \
+    libdrm
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -170,7 +185,8 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-impl-2.1
+    android.hardware.health@2.0-impl-2.1 \
+    android.hardware.health@2.0-service
 
 # Init
 PRODUCT_PACKAGES += \
@@ -216,6 +232,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
 PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.0 \
+    android.hardware.cas@1.1 \
+    android.hardware.cas@1.2 \
     android.hardware.cas@1.1-impl \
     android.hardware.media.omx@1.0-impl \
     android.hardware.media.omx@1.0-service
@@ -225,6 +244,10 @@ PRODUCT_PACKAGES += \
 
 # Neural Network
 PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.0 \
+    android.hardware.neuralnetworks@1.1 \
+    android.hardware.neuralnetworks@1.2 \
+    android.hardware.neuralnetworks@1.3 \
     android.hardware.neuralnetworks@1.3-impl \
     android.hardware.neuralnetworks@1.3-service
 
@@ -232,25 +255,50 @@ PRODUCT_PACKAGES += \
     libcurl \
     libtextclassifier_hash
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-V1-cpp
+
 # Priv-app Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/product-permissions-mediatek.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/product-permissions-mediatek.xml
 
 # Radio
 PRODUCT_PACKAGES += \
+    android.hardware.braodcastradio@1.0 \
+    android.hardware.broadcastradio@1.1 \
+    android.hardware.radio@1.0 \
+    android.hardware.radio@1.1 \
     android.hardware.radio@1.2 \
+    android.hardware.radio@1.3 \
+    android.hardware.radio@1.4 \
     android.hardware.radio@1.5 \
-    android.hardware.radio.config@1.1
+    android.hardware.radio.config@1.1 \
+    android.hardware.radio.config@1.2 \
+    android.hardware.radio.deprecated@1.0
 
 # Thermal
 PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0 \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
+    android.hardware.thermal@2.0 \
     android.hardware.thermal@2.0-impl \
     android.hardware.thermal@2.0-service
 
+# USB
+PRODUCT_PACKAGES += \
+   android.hardware.usb@1.0 \
+   android.hardware.usb@1.1 \
+   android.hardware.usb@1.1-impl \
+   android.hardware.usb@1.1-service \
+   android.hardware.usb.gadget@1.1 \
+   android.hardware.usb.gadget@1.1-impl \
+   android.hardware.usb.gadget@1.1-service
+
 # Vibrator
 PRODUCT_PACKAGES += \
+    android.hardware.vibrator-V1-cpp \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
@@ -259,7 +307,9 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # WiFi
 PRODUCT_PACKGES += \
+    android.hardware.wifi@1.0 \
+    android.hardware.wifi@1.1 \
     android.hardware.wifi@1.0-impl \
-    android.hardware.wifi@1.0-service
+    android.hardware.wifi@1.0-service-lazy
 
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/device-vendor.mk)
