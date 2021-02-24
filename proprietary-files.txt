@@ -551,6 +551,25 @@ vendor/etc/camera/model/rt_model/segment_model
 vendor/etc/camera/sceneDetection.xml
 vendor/etc/camera/vidhance_calibration
 
+# CIT Sensor
+etc/permissions/vendor-xiaomi-hardware-citsensorservice.xml
+lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
+lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
+lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
+lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
+vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
+vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
+vendor/lib/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
+vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
+
 # Configstore
 vendor/bin/hw/android.hardware.configstore@1.1-service
 vendor/etc/init/android.hardware.configstore@1.1-service.rc
