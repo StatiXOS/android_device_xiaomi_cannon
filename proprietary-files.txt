@@ -763,6 +763,7 @@ vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
 vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
+vendor/lib64/wechat.beanpod.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
