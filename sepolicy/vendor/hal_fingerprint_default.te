@@ -5,6 +5,7 @@ binder_call(hal_fingerprint_default, mtk_hal_power)
 
 # Allow fingerprint HAL to find power hwservice
 allow hal_fingerprint_default mtk_hal_power_hwservice:hwservice_manager find;
+allow hal_fingerprint_default hal_fingerprint_hwservice:hwservice_manager find;
 
 allow hal_fingerprint_default property_socket:sock_file write;
 
@@ -21,3 +22,5 @@ allow hal_fingerprint_default hal_fingerprint_default_exec:file entrypoint;
 # Get and Set fingerprint properties
 get_prop(hal_fingerprint_default, vendor_system_prop)
 set_prop(hal_fingerprint_default, vendor_system_prop)
+get_prop(hal_fingerprint_default, vendor_fp_prop)
+set_prop(hal_fingerprint_default, vendor_fp_prop)
