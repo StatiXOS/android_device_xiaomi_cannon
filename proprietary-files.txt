@@ -589,28 +589,26 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
-# Display
-vendor/etc/dsi_panel_j22_42_02_0a_vdo_mi.xml
-vendor/etc/dsi_panel_j22_43_03_0b_vdo_mi.xml
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
-vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
-vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
-vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib/hw/android.hardware.graphics.composer@2.1-impl.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/memtrack.mt6853.so
-vendor/lib/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
+# Display - From Redmi/cannong_global/cannong:10/QP1A.190711.020/V12.0.6.0.QJEMIXM:user/release-keys
+vendor/etc/dsi_panel_j22_42_02_0a_vdo_mi.xml|77744cc3ec337fdc5a75129b9f9fc8e75f9db7e5
+vendor/etc/dsi_panel_j22_43_03_0b_vdo_mi.xml|a075cdd0f516edb7d1c4204685ea503f2344adbd
+vendor/etc/dsi_panel_j22_43_03_0c_vdo_mi.xml|a075cdd0f516edb7d1c4204685ea503f2344adbd
+vendor/lib/hw/gralloc.mt6853.so|b2a485991186c87df8b4b1850e7c6bf0e954d395
+vendor/lib/hw/memtrack.mt6853.so|1d754c560eea828a1cf742e5b5513026407a8f4e
+vendor/lib/libdpframework-v29.so|7afc952e01f1255a10fbadc3c60d2248eb358509
+vendor/lib/libgralloc_extra.so|2bea695ddfc0756aa8027b23e1cdb3914f1426f1
+vendor/lib/libion_mtk-v29.so|0767212c38031d5ac6e9feb3786f5b84fe9f7f4f
+vendor/lib64/hw/gralloc.mt6853.so|301ade5546e00a70f02b762d1938b08d87575e1a
+vendor/lib64/hw/hwcomposer.mt6853.so|abb9f46f0b42f7908dc034895a1e5fad74143c95
+vendor/lib64/libdpframework-v29.so|aece89c83cde102ff0436538f54738a0ff3cd5c0
+vendor/lib64/libgralloc_extra.so|419b32b55b5314c723e6a677be05e04d58e3febb
+vendor/lib64/libion_mtk-v29.so|0247c961bea3da96042e5dcfd78da8ee5ffb07f4
+
+# Libion
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
-vendor/lib/vendor.xiaomi.hardware.displayfeature@1.0.so
-vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib64/hw/hwcomposer.mt6853.so
-vendor/lib64/hw/memtrack.mt6853.so
-vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
+vendor/lib64/libion_mtk.so
+vendor/lib64/libion_ulit.so
 
 # Fido
 vendor/bin/fidoca
@@ -759,20 +757,26 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/lib/hw/gatekeeper.beanpod.so
 vendor/lib64/hw/gatekeeper.beanpod.so
 
-# Graphics
-vendor/lib/egl/egl.cfg
-vendor/lib/egl/libGLES_mali.so
-vendor/lib/egl/libGLES_meow.so
-vendor/lib/egl/libMEOW_gift.so
-vendor/lib/egl/libMEOW_qt.so
-vendor/lib/egl/libMEOW_trace.so
-vendor/lib/libOpenCL.so
-vendor/lib64/egl/libGLES_mali.so
-vendor/lib64/egl/libGLES_meow.so
-vendor/lib64/egl/libMEOW_gift.so
-vendor/lib64/egl/libMEOW_qt.so
-vendor/lib64/egl/libMEOW_trace.so
-vendor/lib64/libOpenCL.so
+# Graphics - From Redmi/cannong_global/cannong:10/QP1A.190711.020/V12.0.6.0.QJEMIXM:user/release-keys
+vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service|6b8a6fb6a7fd69785a2bec17dcf7657de8142f76
+vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc|6940f9990a4d771397dc8c41a31df2df4b6d0790
+vendor/lib/egl/egl.cfg|e9cf0173f529306ae3bf95a91d8ac221745968d0
+vendor/lib/egl/libGLES_mali.so|730b97836e3729e819d4e5232e5fed9e8d184654
+vendor/lib/egl/libGLES_meow.so|e69a3650135083bf2bc9e7f5da6d5ea769f3d8c3
+vendor/lib/egl/libMEOW_trace.so|4cad955d3921e42730fc2a971d6d04c9abf7a963
+vendor/lib/libOpenCL.so|52cafeb2499c80aa9d26b7ddb46b412826a592bb
+vendor/lib/libgpu_aux.so|1333b0a778274396f7b9246ed3d2d1ec50a12b49
+vendor/lib/libgpud.so|b273585e30f5a660e69902f7d12d8e2a2b51bc87
+vendor/lib/vendor.mediatek.hardware.gpu@1.0.so|13789a939c47815f2bd8672264f68d03228eb733
+vendor/lib/vendor.mediatek.hardware.qt@1.0.so|ac91f486db85b02096fd9ac501794c26a00546a6
+vendor/lib64/egl/libGLES_mali.so|604b10e23c1454ae153ff4c98bba48bc3f9c2bde
+vendor/lib64/egl/libGLES_meow.so|1a9f7f73cf19c96a9c27599a47eb6212bcb168a3
+vendor/lib64/egl/libMEOW_trace.so|e2fb5ba613fed4a28b54aa008d2c0be8a413bfcb
+vendor/lib64/libOpenCL.so|cf8b8c72fe8d230cda54591f302f5ce70a577c12
+vendor/lib64/libgpu_aux.so|25198849290529deaf363eaaabba33038ef849d1
+vendor/lib64/libgpud.so|259ed691dcda6994ad870464a7fc549d14f00545
+vendor/lib64/vendor.mediatek.hardware.gpu@1.0.so|8e51b493b6b9a3395d4d86379b7f8dbfd3cc16d4
+vendor/lib64/vendor.mediatek.hardware.qt@1.0.so|fb2453df25b3c32c030b8e610a1364276bb40417
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
@@ -988,7 +992,6 @@ vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
 vendor/bin/hw/android.hardware.sensors@2.0-service-mediatek
 vendor/bin/hw/android.hardware.usb@1.1-service-mediatek
 vendor/bin/hw/vendor.mediatek.hardware.dplanner@2.0-service
-vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.5-service
 vendor/bin/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
@@ -997,7 +1000,6 @@ vendor/bin/hw/vendor.mediatek.hardware.vpu@1.0-service
 vendor/etc/init/android.hardware.sensors@2.0-service-mediatek.rc
 vendor/etc/init/android.hardware.usb@1.1-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.dplanner@2.0-service.rc
-vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mms@1.5-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
@@ -1036,7 +1038,6 @@ vendor/lib/libmtkshifter_vendor.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/libmtksysutils.so
 vendor/lib/libmtk_drvb.so
-vendor/lib/vendor.mediatek.hardware.gpu@1.0.so
 vendor/lib/vendor.mediatek.hardware.mms@1.0.so
 vendor/lib/vendor.mediatek.hardware.mms@1.1.so
 vendor/lib/vendor.mediatek.hardware.mms@1.2.so
@@ -1142,7 +1143,6 @@ vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so
-vendor/lib64/vendor.mediatek.hardware.gpu@1.0.so
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.log@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
@@ -1343,7 +1343,6 @@ system_ext/lib/libtflite_mtk.mtk.so
 system_ext/lib/libvpuapi.mtk.so
 system_ext/lib/vendor.mediatek.hardware.atci@1.0.so
 system_ext/lib/vendor.mediatek.hardware.dfps@1.0.so
-system_ext/lib/vendor.mediatek.hardware.gpu@1.0.so
 system_ext/lib/vendor.mediatek.hardware.mtkradioex@1.0.so
 system_ext/lib/vendor.mediatek.hardware.nvram@1.1.so
 system_ext/lib/vendor.mediatek.hardware.nwk_opt@1.0.so
@@ -1368,7 +1367,6 @@ system_ext/lib64/libtess.so
 system_ext/lib64/libtflite_mtk.mtk.so
 system_ext/lib64/libvpuapi.mtk.so
 system_ext/lib64/vendor.mediatek.hardware.dfps@1.0.so
-system_ext/lib64/vendor.mediatek.hardware.gpu@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.lbs@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.log@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.modemdbfilter@1.0.so
@@ -1551,11 +1549,6 @@ vendor/lib/libfile_op.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libfvaudio.so
 vendor/lib/libged.so
-vendor/lib/libgpud.so
-vendor/lib/libgpu_aux.so
-vendor/lib/libgralloctypes_mtk.so
-vendor/lib/libgralloc_extra.so
-vendor/lib/libgralloc_metadata.so
 vendor/lib/libh264dec_customize.so
 vendor/lib/libh264dec_sa.ca7.so
 vendor/lib/libh264dec_sd.ca7.so
@@ -1712,11 +1705,6 @@ vendor/lib64/libforkexecwrap.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libfvaudio.so
 vendor/lib64/libged.so
-vendor/lib64/libgpud.so
-vendor/lib64/libgpu_aux.so
-vendor/lib64/libgralloctypes_mtk.so
-vendor/lib64/libgralloc_extra.so
-vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libhdrvideo.so
 vendor/lib64/libhevce_sb.ca7.android.so
 vendor/lib64/libhfmanager.so
@@ -1727,8 +1715,6 @@ vendor/lib64/libimageio.so
 vendor/lib64/libimageio_plat_drv.so
 vendor/lib64/libimageio_plat_pipe.so
 vendor/lib64/libimsg_log.so
-vendor/lib64/libion_mtk.so
-vendor/lib64/libion_ulit.so
 vendor/lib64/libipsec_ims_shr.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
