@@ -1656,6 +1656,7 @@ vendor/etc/task_profiles.json
 vendor/etc/throttle.sh
 vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 vendor/etc/vendor-apns-conf.xml
+-vendor/etc/vintf/manifest/lights-mtk-default.xml
 vendor/etc/virtual-spn-conf-by-efgid1.xml
 vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
