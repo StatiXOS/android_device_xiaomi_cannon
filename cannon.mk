@@ -222,10 +222,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libkeymaster4 \
     libkeymaster4support \
+    libkeymaster4_1support \
     libkeymaster_messages \
     libkeymaster_portable \
     libpuresoftkeymasterdevice \
-    libsoft_attestation_cert
+    libsoft_attestation_cert \
+    libsoftkeymasterdevice
 
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-impl \
