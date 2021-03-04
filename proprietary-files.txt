@@ -393,6 +393,7 @@ vendor/lib64/s5k3l6ofilm_mipi_raw_IdxMgr.so
 vendor/lib64/s5k3l6ofilm_mipi_raw_tuning.so
 vendor/lib64/s5kgm1stofilm_mipi_raw_IdxMgr.so
 vendor/lib64/s5kgm1stofilm_mipi_raw_tuning.so
+vendor/lib64/lib_bsscore.so
 vendor/lib64/libc++_shared.so
 vendor/lib64/libcam.afhal.so
 vendor/lib64/libcam.ArcCamEngine.so
@@ -432,6 +433,7 @@ vendor/lib64/libcamalgo.gyro.so
 vendor/lib64/libcamalgo.ispfeature.so
 vendor/lib64/libcamalgo.lmv.so
 vendor/lib64/libcamalgo.lsc.so
+vendor/lib64/libcamalgo.mfnr.so
 vendor/lib64/libcamalgo.n3d.so
 vendor/lib64/libcamalgo.nr.so
 vendor/lib64/libcamalgo.utility.so
@@ -604,6 +606,7 @@ vendor/lib64/libCamera_s5kgm1stofilmmipiraw_Zoom_Preview.so
 vendor/lib64/libCamera_s5kgm1stofilmmipiraw_Zoom_Preview1.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libcamera_scene.so
+vendor/lib64/libmfllcore.so
 vendor/lib64/libmialgoengine.so
 vendor/lib64/libmialgo_sd.so
 vendor/lib64/libmialgo_utils.so
