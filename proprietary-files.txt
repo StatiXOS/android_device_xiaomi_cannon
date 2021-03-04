@@ -938,8 +938,8 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 
 # Gatekeeper
-vendor/lib/hw/gatekeeper.beanpod.so
-vendor/lib64/hw/gatekeeper.beanpod.so
+vendor/lib/hw/gatekeeper.mt6853.so|5f7b8c387758cddfcd4bd27cadc7c116327b0d55
+vendor/lib64/hw/gatekeeper.mt6853.so|6c8af059132b858f2a8c9c1a707c90ed1b4d88fa
 
 # Graphics - From Redmi/cannong_global/cannong:10/QP1A.190711.020/V12.0.6.0.QJEMIXM:user/release-keys
 vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service|6b8a6fb6a7fd69785a2bec17dcf7657de8142f76
@@ -963,23 +963,35 @@ vendor/lib64/vendor.mediatek.hardware.gpu@1.0.so|8e51b493b6b9a3395d4d86379b7f8db
 vendor/lib64/vendor.mediatek.hardware.qt@1.0.so|fb2453df25b3c32c030b8e610a1364276bb40417
 
 # Keymaster
-vendor/bin/bp_kmsetkey_ca
-vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
-vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
-vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
-vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
-vendor/lib/hw/kmsetkey.beanpod.so
-vendor/lib/hw/libSoftGatekeeper.so
-vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
-vendor/lib64/hw/kmsetkey.beanpod.so
-vendor/lib64/hw/libSoftGatekeeper.so
-vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib64/wechat.beanpod.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
+vendor/bin/bp_kmsetkey_ca|2840d5501cb4ddeacaa1542914348d82281782a0
+vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod|d6a103dec42e623c26c82900c0df7097cd680219
+vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service|40726dca6fa50d20aa1466c4bbe4d67760faa47e
+vendor/bin/hw/vendor.microtrust.hardware.capi@2.0-service|dd4f67753cb2d55681b53731170124fc6794a4d6
+vendor/bin/hw/vendor.microtrust.hardware.thh@2.0-service|1bcb40fa803cb077a2cba9f001f0b6939e02bfca
+vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc|8319b159f1021b009443c44a606c28319d7a05f6
+vendor/etc/init/microtrust.bp_kmsetkey_ca.rc|92ac6bb7e1ade85ed6a034649e6322dbfca6ad9a
+vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc|ea0e55554f23360173e8eb478d5502193d853127
+vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc|e78ce0eabe5652d820f3b05b34d253c1807876a9
+vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc|928ca82024e71378a5003fcbdaa4b5a4fffcad71
+vendor/lib/hw/kmsetkey.default.so|724ee4dd05ef001fb9d5a60006976ac92115d8d4
+vendor/lib/hw/kmsetkey.mt6853.so|dd2107a9af459961c88cb9a0227b08866b4cfb99
+vendor/lib/hw/libSoftGatekeeper.so|f2fb846a6881a1bbee4c7ad91b7693592f9636c3
+vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so|3cd7041e609938d464bf4564b01a2db499c87ffc
+vendor/lib/libmtee.so|028d2daa48e0b27548acf0462a417ff78f72a1e8
+vendor/lib/libthhclient.so|09eb85ec9b5cae92adf59e0821cdf818772da6ed
+vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so|399c1eb65ce5af11553bf9f332111ed4db32bc25
+vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so|e9d467ad515e635106abd1f278fafc964e65ce9e
+vendor/lib64/hw/kmsetkey.default.so|1d457386a36f895520323d7bc54fb46caff5971e
+vendor/lib64/hw/kmsetkey.mt6853.so|e3ca57da5ea523dfb5ca0f8c7af8d35ce63d8a38
+vendor/lib64/hw/libSoftGatekeeper.so|7c91f643ab86674f557dc77859374bade79e22f4
+vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so|813b0f3d713b3d515625dbb74912493fc746185d
+vendor/lib64/libmtee.so|90ea83cd4b5bd0d0bd858ab96eef33d1103644bd
+vendor/lib64/libthhclient.so|0d41b480e45ad675926670928e398ef782e784e0
+vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so|904530ad6c5f2bb1d3bfc6247ed0a320fe924ad7
+vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so|4058e06c539c9b61b7a9e5b60094631335d61f1a
+vendor/lib64/vendor.microtrust.hardware.capi@2.0.so|73abcdc7de2947a93396b5230294447312fbdf42
+vendor/lib64/vendor.microtrust.hardware.thh@2.0.so|66db94490e1fa660765b2598bff986a785ca876c
+vendor/lib64/wechat.beanpod.so|f2f770a5f8759c50e68d4ba005ed9cebcaa0c7fe
 
 # Libhwbinder
 vendor/lib/libhwbinder.so
