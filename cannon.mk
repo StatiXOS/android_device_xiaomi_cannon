@@ -184,7 +184,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
+PRODUCT_PACKAGES += \
+    libgatekeeper \
+    libgatekeeper_aidl
 
 # HIDL
 PRODUCT_PACKAGES += \
