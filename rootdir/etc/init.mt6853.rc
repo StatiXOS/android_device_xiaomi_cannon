@@ -8,7 +8,7 @@ import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.aee.rc
 import /vendor/etc/init/hw/init.volte.rc
 import /vendor/etc/init/hw/init.mal.rc
-import /vendor/etc/init/hw/init.sensor.rc
+import /vendor/etc/init/hw/${ro.vendor.init.sensor.rc}
 import /vendor/etc/init/hw/init.stnfc.rc
 import /system/etc/init/hw/init.stnfc.rc
 
@@ -90,9 +90,12 @@ on charger
     start fuelgauged
     start fuelgauged_nvram
 
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/lcd-backlight/max_brightness
+    chown system system /sys/class/leds/lcd-backlight/max_brightness
+    chmod 0664 /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/brightness
 
     start vendor.light-default
 
@@ -110,8 +113,7 @@ on fs
     # mount fstab
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/tracing/trace_marker "B|1|Mount"
-    mount_all /vendor/etc/fstab.mt6853 --early
-    mount_all /vendor/etc/fstab.mt6853 --late
+    mount_all --early
     exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
@@ -281,12 +283,6 @@ on post-fs-data
 
     chmod 0660 /dev/spm
     chown system system /dev/spm
-
-    # calibration
-    mkdir /data/vendor/sensor 0774 system system
-    # Sensor
-    chmod 0660 /dev/hf_manager
-    chown system system /dev/hf_manager
 
 # GPS
     chmod 0775 /vendor/xbin/MPED
