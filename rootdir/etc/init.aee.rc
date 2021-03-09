@@ -8,3 +8,6 @@ on post-fs-data
 on post-fs
     start aee_aedv
     start aee_aedv64
+
+on property:sys.boot_completed=1
+    setprop persist.vendor.aeev.log.status 1

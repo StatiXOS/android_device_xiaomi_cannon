@@ -117,12 +117,12 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0 \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@5.0 \
+    android.hardware.audio@5.0-impl \
+    android.hardware.audio.effect@5.0-impl \
     android.hardware.soundtrigger@2.0-core \
-    android.hardware.soundtrigger@2.3 \
-    android.hardware.soundtrigger@2.3-impl \
+    android.hardware.soundtrigger@2.2 \
+    android.hardware.soundtrigger@2.2-impl \
     android.hardware.bluetooth.audio@2.0-impl
 
 # Bluetooth
@@ -139,9 +139,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.5 \
-    android.hardware.camera.provider@2.6 \
-    android.hardware.camera.provider@2.6-impl \
-    android.hardware.camera.provider@2.6-service
+    android.hardware.camera.provider@2.6
 
 PRODUCT_PACKAGES += \
     Camera2
@@ -154,12 +152,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.allocator@4.0 \
     android.hardware.graphics.common@1.2 \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
-    android.hardware.graphics.mapper@4.0 \
     android.hardware.memtrack@1.0-impl \
     android.harwdare.memtrack@1.0-service
 
@@ -217,15 +213,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     capture.sh \
     capture_headsetmic.sh \
-    install-recovery.sh \
-    mishow.sh \
     playback.sh \
     playback_headset.sh \
+    set_product_name.sh \
     setup_headsetmic2headphone.sh \
     setup_headsetmic2rcv.sh \
     setup_mainmic2headphone.sh \
-    setup_rcv2mainmic.sh \
-    setup_rcv2topmic.sh \
     setup_topmic2headphone.sh \
     teardown_loopback.sh \
     tp_data_collect.sh \
@@ -246,11 +239,10 @@ PRODUCT_PACKAGES += \
     meta_init.project.rc \
     meta_init.rc \
     multi_init.rc \
-    fstab.emmc \
     fstab.enableswap \
     fstab.mt6853 \
-    ueventd.mtk.rc \
-    ramdisk-fstab.mt6853
+    ramdisk-fstab.mt6853 \
+    ueventd.mtk.rc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -314,10 +306,6 @@ PRODUCT_PACKAGES += \
     libcurl \
     libtextclassifier_hash
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-V1-cpp
-
 # Priv-app Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/product-permissions-mediatek.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/product-permissions-mediatek.xml
@@ -373,7 +361,6 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V1-cpp \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
@@ -384,7 +371,14 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 29
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
     android.hardware.wifi@1.1 \
-    android.hardware.wifi@1.0-impl \
-    android.hardware.wifi@1.0-service-lazy
+    android.hardware.wifi@1.2 \
+    android.hardware.wifi@1.3 \
+    android.hardware.wifi@1.3-impl \
+    android.hardware.wifi@1.3-service \
+    android.hardware.wifi.hostapd@1.0 \
+    android.hardware.wifi.hostapd@1.1 \
+    android.hardware.wifi.hostapd@1.1-impl \
+    android.hardware.wifi.hostapd@1.1-service \
+    android.hardware.wifi.supplicant@1.2
 
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/device-vendor.mk)

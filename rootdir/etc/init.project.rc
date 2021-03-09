@@ -1,10 +1,8 @@
 # MTK project .rc configure
-
-import /vendor/etc/init/init.batteryd.rc
-import /vendor/etc/init/init.charge_logger.rc
-import /vendor/etc/init/init.mishow.ctl.rc
-
 import init.mi_thermald.rc
+import init.mishow.ctl.rc
+
+import /vendor/etc/init/init.factory.rc
 
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
@@ -13,7 +11,7 @@ on init
 
 on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
-    mkdir /data/vendor/thermal/config 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system]
 
 #thermal
 chown system system /sys/class/thermal/thermal_message/sconfig
@@ -60,7 +58,6 @@ chown system system /sys/class/thermal/thermal_message/sconfig
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-#NFC
     chmod 0660 /dev/nq-nci
     chown nfc nfc /dev/nq-nci
     chmod 0660 /dev/p73

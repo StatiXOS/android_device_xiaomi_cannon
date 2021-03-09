@@ -3,6 +3,7 @@
 #     top-mic: top mic
 #     back-mic: back mic
 #     front-mic: front mic
+#     us: ultrasound
 # $2: sample rate(Hz)
 # $3: sample bit
 # $4: channel number
@@ -59,7 +60,7 @@ function enable_top_mic
     tinymix 'MISO0_MUX' 'UL1_CH2'
     tinymix 'MISO1_MUX' 'UL1_CH2'
     tinymix 'ADC_R_Mux' 'Right Preamplifier'
-    tinymix 'PGA_R_Mux' 'AIN2'
+    tinymix 'PGA_R_Mux' 'AIN3'
 }
 
 function disable_top_mic
@@ -96,34 +97,53 @@ function disable_front_mic
 
 function enable_ultrasound_mic
 {
-    echo "DOSE NOT SUPPORT ULTRASOUND FEATURE"
+    echo "enable ultrasound mic"
+    tinymix 'Mic_Type_Mux_2' 'DCC'
+    tinymix 'UL5_CH1 ADDA_UL_CH1' 1
+    tinymix 'UL5_CH2 ADDA_UL_CH2' 1
+    tinymix 'MISO0_MUX' 'UL1_CH2'
+    tinymix 'MISO1_MUX' 'UL1_CH2'
+    tinymix 'ADC_R_Mux' 'Right Preamplifier'
+    tinymix 'PGA_R_Mux' 'AIN3'
 }
 
 function disable_ultrasound_mic
 {
-    echo "DOSE NOT SUPPORT ULTRASOUND FEATURE"
+    echo "disable ultrasound mic"
+    tinymix 'Mic_Type_Mux_2' 'Idle'
+    tinymix 'UL5_CH1 ADDA_UL_CH1' 0
+    tinymix 'UL5_CH2 ADDA_UL_CH2' 0
+    tinymix 'ADC_L_Mux' 'Idle'
+    tinymix 'ADC_R_Mux' 'Idle'
+    tinymix 'PGA_L_Mux' 'None'
+    tinymix 'PGA_R_Mux' 'None'
 }
 
 case "$1" in
     "main-mic" )
         enable_main_mic
         filename=/sdcard/main_mic.wav
+        pcm_id=10
         ;;
     "top-mic" )
         enable_top_mic
         filename=/sdcard/top_mic.wav
+        pcm_id=10
         ;;
     "back-mic" )
         enable_back_mic
         filename=/sdcard/back_mic.wav
+        pcm_id=10
         ;;
     "front-mic" )
         enable_front_mic
         filename=/sdcard/front_mic.wav
+        pcm_id=10
         ;;
     "us" )
         enable_ultrasound_mic
         filename=/sdcard/us_mic.wav
+        pcm_id=14
         ;;
     *)
         echo "Usage: capture.sh main-mic 48000 16 2 10"
@@ -145,7 +165,7 @@ fi
 
 # start recording
 echo "start recording"
-tinycap $filename -D 0 -d 10 -r $2 -b $3 -c $4 -T $5 -p $period_size -n $n_periods
+tinycap $filename -D 0 -d $pcm_id -r $2 -b $3 -c $4 -T $5 -p $period_size -n $n_periods
 ret=$?
 if [ $ret -ne 0 ]; then
     echo "tinycap done, return $ret"

@@ -26,12 +26,11 @@ on early-init
     write /sys/class/net/ccmni19/queues/rx-0/rps_cpus "0D"
     write /sys/class/net/ccmni20/queues/rx-0/rps_cpus "0D"
 
-    write /proc/sys/net/core/netdev_max_backlog 50000
-    write /proc/sys/net/ipv4/ipfrag_high_thresh 20971520
-
 on post-fs-data
 
     write /proc/bootprof "post-fs-data: on modem start"
+    write /proc/sys/net/core/netdev_max_backlog 50000
+    write /proc/sys/net/ipv4/ipfrag_high_thresh 20971520
 
 # Encrypt phone function
     setprop vold.post_fs_data_done 1

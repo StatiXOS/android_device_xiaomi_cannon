@@ -3,7 +3,7 @@
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6853.usb.rc
 import /vendor/etc/init/hw/init.project.rc
-import /system_ext/etc/init/hw/init.aee.rc
+import /system/etc/init/hw/init.aee.rc
 import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.aee.rc
 import /vendor/etc/init/hw/init.volte.rc
@@ -25,7 +25,6 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    write /proc/bootprof "INIT:init"
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
@@ -33,6 +32,12 @@ on init
     # setprop ro.vold.primary_physical 1
 
     mkdir /mnt/cd-rom 0000 system system
+
+    # create low_latency boost group
+    mkdir /dev/stune/low_latency
+    chown system system /dev/stune/low_latency
+    chown system system /dev/stune/low_latency/tasks
+    chmod 0755 /dev/stune/low_latency
 
 # change lk_env permission
     chown root system /proc/lk_env
@@ -61,15 +66,15 @@ on charger
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
-    exec /system/bin/e2fsck -f -p /dev/block/by-name/cache
-    mount ext4 /dev/block/by-name/cache /cache rw wait
+    exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
+    mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
     chmod 0666 /dev/kmsg
     chmod 0775 /mnt/vendor
     mkdir /mnt/vendor/nvcfg
-    mount ext4 /dev/block/by-name/nvcfg /mnt/vendor/nvcfg rw wait
+    mount ext4 /dev/block/platform/bootdevice/by-name/nvcfg /mnt/vendor/nvcfg rw wait
     chown system system /mnt/vendor/nvcfg
     chmod 0771 /mnt/vendor/nvcfg
     restorecon_recursive /mnt/vendor/nvcfg
@@ -90,53 +95,40 @@ on charger
     start fuelgauged
     start fuelgauged_nvram
 
-    chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
-    chmod 0664 /sys/class/leds/lcd-backlight/max_brightness
-    chown system system /sys/class/leds/lcd-backlight/max_brightness
-    chmod 0664 /sys/class/leds/white/brightness
-    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
 
-    start vendor.light-default
+    start servicemanager
+    start hwservicemanager
+    start light-hal-2-0
+    start health-hal-2-0
 
-    # Stop bootprof
-    write /proc/bootprof "0"
-
-on early-fs
-    write /proc/bootprof "INIT:early-fs"
+    #Charge logger
+    mkdir /data/vendor/charge_logger 0771 system system
+    start charge_logger
 
 on fs
-    write /proc/bootprof "INIT:fs"
-
-    start vendor.boot-hal-1-1
-
-    # mount fstab
     write /proc/bootprof "INIT:Mount_START"
-    write /sys/kernel/tracing/trace_marker "B|1|Mount"
-    mount_all --early
-    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
-    write /sys/kernel/tracing/trace_marker "E"
+    write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
+    wait_for_prop hwservicemanager.ready "true"
+    start vendor.boot-hal-1-0
+    mount_all /vendor/etc/fstab.mt6853 --early
+    mount_all /vendor/etc/fstab.mt6853 --late
+    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
+    write /sys/kernel/debug/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
-
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
     write /sys/kernel/mm/swap/vma_ra_enabled false
-    swapon_all /vendor/etc/fstab.mt6853
+    mkdir /mnt/vendor/persist/stability 0755 system system
+    mkdir /mnt/vendor/persist/misys 0755 system system
+    mkdir /mnt/vendor/persist/audio 0755 system system
 
 on fs
-    mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
 
-on late-fs
-    write /proc/bootprof "INIT:late-fs"
-    wait_for_prop hwservicemanager.ready "true"
-    exec_start wait_for_keymaster
-
-    write /proc/bootprof "INIT:Mount_START --late"
-    write /sys/kernel/tracing/trace_marker "B|1|Mount late"
-    mount_all --late
-    write /sys/kernel/tracing/trace_marker "E"
-    write /proc/bootprof "INIT:Mount_END --late"
+   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
 
 on post-fs
     write /proc/bootprof "INIT:post-fs"
@@ -146,6 +138,7 @@ on post-fs
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_stune_task_thresh 0
 
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
@@ -168,20 +161,20 @@ on post-fs
     # Support A/B feature for emmc boot region
     symlink /dev/block/sda /dev/block/mmcblk0boot0
     symlink /dev/block/sdb /dev/block/mmcblk0boot1
-    symlink /dev/block/mmcblk0boot0 /dev/block/by-name/preloader_a
-    symlink /dev/block/mmcblk0boot1 /dev/block/by-name/preloader_b
+    symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
+    symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b
 
     # Support A/B feature for combo emmc and ufs OTA update
-    symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_emmc_a
-    symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_emmc_b
-    symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_ufs_a
-    symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_ufs_b
+    symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/platform/bootdevice/by-name/preloader_emmc_a
+    symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_emmc_b
+    symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/platform/bootdevice/by-name/preloader_ufs_a
+    symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_ufs_b
 
     # Support A/B feature for combo emmc and ufs OTA update
-    symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_emmc_a
-    symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_emmc_b
-    symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_ufs_a
-    symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_ufs_b
+    symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/by-name/preloader_emmc_a
+    symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/by-name/preloader_emmc_b
+    symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/by-name/preloader_ufs_a
+    symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/by-name/preloader_ufs_b
 
 # change owner
     chown system system /proc/bootprof
@@ -194,7 +187,6 @@ on post-fs
 
     chown system system /mnt/vendor/protect_s
     chmod 0770 /mnt/vendor/protect_s
-    chown root log /proc/ccci_sib
 
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
@@ -235,17 +227,6 @@ on post-fs-data
     mkdir /data/vendor/flash
     chown root system /data/vendor/flash
     chmod 0771 /data/vendor/flash
-
-    #Create pdo folder
-    mkdir /data/vendor/pdo
-    chown root system /data/vendor/pdo
-    chmod 0771 /data/vendor/pdo
-
-    #Create AFObitTrue folder
-    mkdir /data/vendor/AFObitTrue
-    chown root system /data/vendor/AFObitTrue
-    chmod 0771 /data/vendor/AFObitTrue
-
 
     #Create shading mount point
     mkdir /data/vendor/shading
@@ -368,11 +349,11 @@ on post-fs-data
     setrlimit 8 -1 -1
 
     # CMDQ
-    chmod 0640 /dev/mtk_mdp
+    chmod 0644 /dev/mtk_mdp
     chown system system /dev/mtk_mdp
 
     # MDP SYNC
-    chmod 0640 /dev/mdp_sync
+    chmod 0644 /dev/mdp_sync
     chown system system /dev/mdp_sync
 
     #OFFLOAD SERVICE
@@ -411,8 +392,6 @@ on post-fs-data
     chown media system /dev/video1
     mkdir /data/vendor/vcodec 0770 media system
     mkdir /data/vendor/vcodec/log 0770 media system
-    mkdir /data/vendor/vcodec/in 0770 media system
-    mkdir /data/vendor/vcodec/out 0770 media system
 
     #MJC
     #insmod /vendor/lib/modules/mjc_kernel_driver.ko
@@ -710,6 +689,9 @@ on post-fs-data
 	#Thermal
 	mkdir /data/vendor/.tp/ 0775 system system
 
+    #Charge logger
+    mkdir /data/vendor/charge_logger 0771 system system
+
     #MCUPM log
     chmod 0620 /sys/class/misc/mcupm/mcupm_mobile_log
     chown root system /sys/class/misc/mcupm/mcupm_mobile_log
@@ -734,16 +716,20 @@ on post-fs-data
 # End of adding by MTK drivers
 # -----------------------
 
-on zygote-start
-    write /proc/bootprof "INIT:zygote-start"
+# add charge_logger service for dump charge message
+service charge_logger /vendor/bin/charge_logger
+    class last_start
+    user system
+    group system system wakelock
+    disabled
+    oneshot
 
-on early-boot
-    write /proc/bootprof "INIT:early-boot"
+on property:sys.boot_completed=1
+    start charge_logger
 
 on boot
     write /proc/bootprof "INIT:boot"
 
-    write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
@@ -945,6 +931,15 @@ on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
+# Set enableflags for boot Systrace
+on early-init && property:ro.boot.boot_trace=1
+    setprop debug.atrace.tags.enableflags 0x1fffffe
+
+## mtk printk uart controller
+on property:persist.vendor.uartconsole.enable=*
+    write /proc/mtprintk ${persist.vendor.uartconsole.enable}
+
+
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B -z \
         -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
@@ -980,6 +975,7 @@ on property:sys.boot_completed=1
     write /dev/stune/foreground/schedtune.prefer_idle 0
     write /dev/stune/top-app/schedtune.prefer_idle 0
     write /dev/stune/rt/schedtune.prefer_idle 0
+    write /dev/stune/low_latency/schedtune.prefer_idle 1
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
     # restore perf. parameters
@@ -987,6 +983,7 @@ on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 0"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_stune_task_thresh -1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
@@ -996,6 +993,7 @@ on property:sys.boot_completed=1
 
     # stop bootprof
     write /proc/bootprof 0
+    write /proc/mtprintk ${persist.vendor.uartconsole.enable}
 
 #service dpfd /vendor/bin/dpfd
 #	user root
@@ -1052,6 +1050,13 @@ on property:persist.vendor.mediatek.fg.log.enable=1
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
     write /proc/sys/kernel/printk 8
 
+# add loghidl client
+service loghidlsysservice /system/bin/loghidlsysservice
+    class main
+    user root
+    group system
+    disabled
+
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
     class main
@@ -1064,6 +1069,8 @@ service meta_tst /vendor/bin/meta_tst
 # start meta_tst for ATM
 on property:sys.boot_completed=1 && property:ro.boot.atm=enable
     start meta_tst
+    start loghidlvendorservice
+    start loghidlsysservice
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
@@ -1092,10 +1099,9 @@ service osi /system/bin/osi
     oneshot
     #seclabel u:r:osi:s0
 
-service charger /system/bin/charger
+service charger system/bin/charger
     class charger
     critical
     #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
-
