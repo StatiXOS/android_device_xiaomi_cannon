@@ -1702,6 +1702,9 @@ vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
 vendor/lib/hw/thermal.mt6853.so
 vendor/lib64/hw/thermal.mt6853.so
 
+# Unwindstack
+lib64/libunwindstack.so:vendor/lib64/libunwindstack-v29.so
+
 # Vibrator
 vendor/bin/hw/android.hardware.vibrator@1.0-service
 vendor/etc/init/android.hardware.vibrator@1.0-service.rc
