@@ -62,7 +62,7 @@ function blob_fixup() {
         vendor/lib/libaedv.so)
             ;&
         vendor/lib64/libaedv.so)
-            "${PATCHELF}" --add-needed "libunwindstack-v29.so" "${2}"
+            "${PATCHELF}" --replace-needed "libunwindstack.so" "libunwindstack-v29.so" "${2}"
             ;;
     esac
 }
