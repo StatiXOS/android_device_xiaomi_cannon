@@ -64,6 +64,11 @@ function blob_fixup() {
         vendor/lib64/libaedv.so)
             "${PATCHELF}" --replace-needed "libunwindstack.so" "libunwindstack-v29.so" "${2}"
             ;;
+        vendor/lib64/hw/audio.primary.mt6853.so)
+            ;&
+        vendor/lib/hw/audio.primary.mt6853.so)
+            "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
+            ;;
     esac
 }
 
