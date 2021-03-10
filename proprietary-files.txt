@@ -1583,21 +1583,39 @@ vendor/lib64/secure_element-impl.so
 vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
 vendor/lib64/vendor.nxp.hardware.nfc@1.1.so
 
-# Neural-networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-neuron-ann
-vendor/etc/init/android.hardware.neuralnetworks@1.2-service-neuron-ann.rc
--vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.2-service-neuron-ann.xml
-vendor/lib/libneuroeara.so
-vendor/lib/libneuropilot_hal_utils.so
-vendor/lib/libneuropilot_jni.so
-vendor/lib/libnir_neon_driver.so
-vendor/lib64/libarmnn.so
-vendor/lib64/libcmdl.so
-vendor/lib64/libneuroeara.so
-vendor/lib64/libneuron_platform.so
-vendor/lib64/libneuropilot_hal_utils.so
-vendor/lib64/libneuropilot_jni.so
-vendor/lib64/libnir_neon_driver.so
+# Neural-networks - from Redmi/cannon/cannon:11/RP1A.200720.011/21.2.23:user/release-keys
+system_ext/lib/libarmnn_ndk.mtk.so|264e74895a7261f0795e8d304016f45133df4906
+system_ext/lib/libcmdl_ndk.mtk.so|33edb119a7dfafd9c460e7b02c8c8e9c4e29098c
+system_ext/lib/libneuron_opencv_delegate.mtk.so|8453fb500e4267a9ac5899195e658def6b996415
+system_ext/lib/libneuronusdk_adapter.mtk.so|62637b8fff5deca104033a5c13d4eddb0b4676ca
+system_ext/lib/libnir_neon_driver_ndk.mtk.so|91f50af9d26c3e011adef5cc9ca5e8f52ea21b9d
+system_ext/lib64/libarmnn_ndk.mtk.so|c1cb1964812b9d56f8b063be9a30aba0d13db7d4
+system_ext/lib64/libneuron_opencv_delegate.mtk.so|7447191b9d2575819d56bcea4e5e08a95dd58984
+system_ext/lib64/libneuronusdk_adapter.mtk.so|d5154bc78ff5e18fe48f072b149a0da67b1ecc80
+system_ext/lib64/libnir_neon_driver_ndk.mtk.so|58a4322988d1f224e126a42897a0289a14b50262
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|42ec3d47e47bf3bafaba71ac162a7a242a78181e
+vendor/etc/armnn_app.config|f107d1f49f6f9c5f0356b48fbcb0d1bde29c5f1b
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc|ebdc6355d6d4b243161f536aeafb9392373bde11
+vendor/lib/libarmnn_ndk.mtk.so|264e74895a7261f0795e8d304016f45133df4906
+vendor/lib/libcmdl_ndk.mtk.so|28af41508eb702223f5bc7a767403e2dd3413176
+vendor/lib/libneuroeara.so|bda7ec7fc57384bbba916fa18e183ffb8a8e93a1
+vendor/lib/libneuropilot_hal_utils.so|10e6f2088cc67a3240b3ea34ad691bdaae440f22
+vendor/lib/libneuropilot_jni_R.so|0d8f1078339b551124250eeb5c9bcc4eb4cd3f9b
+vendor/lib/libnir_neon_driver.so|7da263b20694ce7675300b28468def2033feb22a
+vendor/lib/libnir_neon_driver_ndk.mtk.so|91f50af9d26c3e011adef5cc9ca5e8f52ea21b9d
+vendor/lib64/libarmnn.so|666cf59300424cf1a5076a448a47dcd7df79102b
+vendor/lib64/libarmnn_ndk.mtk.so|c1cb1964812b9d56f8b063be9a30aba0d13db7d4
+vendor/lib64/libcmdl.so|fb2e749cfbeec137a9df889ee57e91d13d76a784
+vendor/lib64/libcmdl_ndk.mtk.so|44debcccf39935d2750422f97c6b70618bd10dff
+vendor/lib64/libneuroeara.so|c446ef167e59fac98abbbbb5ef07375412d5deaf
+vendor/lib64/libneuron_adapter.so|39a16e05f20516d611075cbc85cf8805b317c784
+vendor/lib64/libneuron_platform.so|dc0adec18e8c4c1aeecb2ef38bb6e40bdc106a36
+vendor/lib64/libneuron_runtime.so|cc7bd85922be5f9b5feefaf62014d10b868b3dee
+vendor/lib64/libneuropilot_hal_utils.so|1eb2933feaff2e8060e841c74cacf1817c4889ef
+vendor/lib64/libneuropilot_jni_R.so|e8a78a81eaefd073c75d9648c30c74579dae947e
+vendor/lib64/libnir_neon_driver.so|c8333fcc2fd8c8a92abe02ea88a051c627fa085d
+vendor/lib64/libnir_neon_driver_ndk.mtk.so|58a4322988d1f224e126a42897a0289a14b50262
+-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-dsp-gpu.xml|2588438a71de5484d0fd8e862c554a2d256aca82
 
 # Perf
 lib/libmtkperf_client.so
