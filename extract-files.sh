@@ -69,6 +69,9 @@ function blob_fixup() {
         vendor/lib/hw/audio.primary.mt6853.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
             ;;
+        vendor/lib64/libapu-platform.so)
+            "${PATCHELF}" --replace-needed "libneuron_platform.so" "libneuron_platform-v29.so" "${2}"
+            ;;
     esac
 }
 

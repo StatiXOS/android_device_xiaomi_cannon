@@ -3,6 +3,7 @@ vendor/lib/libapusys.so
 vendor/lib64/libapu-frontend.so
 vendor/lib64/libapu-platform.so
 vendor/lib64/libapusys.so
+vendor/lib64/libneuron_platform.so:vendor/lib64/libneuron_platform-v29.so
 
 # Audio
 lib/libbessound_hd_mtk.so
