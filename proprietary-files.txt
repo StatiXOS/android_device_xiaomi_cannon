@@ -1097,10 +1097,8 @@ vendor/lib64/hw/gps.default.so
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service
 vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib/hw/gatekeeper.default.so
 vendor/lib/hw/gatekeeper.mt6853.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib64/hw/gatekeeper.default.so
 vendor/lib64/hw/gatekeeper.mt6853.so
 
 # Google
@@ -1111,12 +1109,10 @@ vendor/lib/egl/egl.cfg
 vendor/lib/egl/libGLES_mali.so
 vendor/lib/egl/libGLES_meow.so
 vendor/lib/egl/libMEOW_trace.so
-vendor/lib/hw/vulkan.mt6853.so
 vendor/lib/libOpenCL.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_trace.so
-vendor/lib64/hw/vulkan.mt6853.so
 vendor/lib64/libOpenCL.so
 
 # Health
