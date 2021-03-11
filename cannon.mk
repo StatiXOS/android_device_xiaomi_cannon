@@ -414,10 +414,14 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.3 \
     android.hardware.wifi@1.3-impl \
     android.hardware.wifi@1.3-service \
+    android.hardware.wifi@1.0-service-lib \
     android.hardware.wifi.hostapd@1.0 \
     android.hardware.wifi.hostapd@1.1 \
     android.hardware.wifi.hostapd@1.1-impl \
     android.hardware.wifi.hostapd@1.1-service \
     android.hardware.wifi.supplicant@1.2
+
+PRODUCT_PACKAGES += \
+    libwifi-hal
 
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/device-vendor.mk)
