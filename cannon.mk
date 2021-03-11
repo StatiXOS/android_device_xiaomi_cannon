@@ -300,6 +300,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libminijail
 
+# Mediatek
+PRODUCT_BOOT_JARS += \
+   mediatek-common \
+   mediatek-framework
+
 # Neural Network
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.0 \
@@ -423,5 +428,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libwifi-hal
+
+PRODUCT_BOOT_JARS += \
+    mtk-wifi-service
 
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/device-vendor.mk)
