@@ -213,18 +213,6 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    capture.sh \
-    capture_headsetmic.sh \
-    playback.sh \
-    playback_headset.sh \
-    set_product_name.sh \
-    setup_headsetmic2headphone.sh \
-    setup_headsetmic2rcv.sh \
-    setup_mainmic2headphone.sh \
-    setup_topmic2headphone.sh \
-    teardown_loopback.sh \
-    tp_data_collect.sh \
-    tp_selftest.sh \
     factory_init.connectivity.rc \
     factory_init.project.rc \
     factory_init.rc \
