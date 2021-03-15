@@ -923,10 +923,6 @@ vendor/etc/camera/TEMP_J7_WT.bin
 vendor/etc/camera/TEMP_J7_WU.bin
 vendor/etc/camera/vidhance_calibration
 
-# Configstore
-vendor/bin/hw/android.hardware.configstore@1.1-service
-vendor/etc/init/android.hardware.configstore@1.1-service.rc
-
 # Consumerir
 vendor/lib/hw/consumerir.mt6853.so
 vendor/lib64/hw/consumerir.mt6853.so
