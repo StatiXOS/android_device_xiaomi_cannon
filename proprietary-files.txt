@@ -1713,13 +1713,7 @@ vendor/lib64/hw/thermal.mt6853.so
 lib64/libunwindstack.so:vendor/lib64/libunwindstack-v29.so
 
 # Vibrator
-vendor/bin/hw/android.hardware.vibrator@1.0-service
-vendor/etc/init/android.hardware.vibrator@1.0-service.rc
-vendor/lib/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib/hw/vibrator.default.so
 vendor/lib/hw/vibrator.mt6853.so
-vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib64/hw/vibrator.default.so
 vendor/lib64/hw/vibrator.mt6853.so
 
 # WiFi
