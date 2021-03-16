@@ -167,7 +167,6 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
 
-TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 
 # Inherit from the proprietary version
