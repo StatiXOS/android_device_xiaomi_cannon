@@ -420,10 +420,17 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.hostapd@1.1 \
     android.hardware.wifi.hostapd@1.1-impl \
     android.hardware.wifi.hostapd@1.1-service \
+    android.hardware.wifi.supplicant@1.0 \
+    android.hardware.wifi.supplicant@1.1 \
     android.hardware.wifi.supplicant@1.2
 
 PRODUCT_PACKAGES += \
+    hostapd \
+    hostapd_cli \
     libwifi-hal \
+    wpa_supplicant \
+    libwpa_client \
+    wificond \
     TetheringConfigOverlay \
     WifiOverlay
 
