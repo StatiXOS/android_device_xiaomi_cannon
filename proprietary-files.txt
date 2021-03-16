@@ -1613,9 +1613,7 @@ lib64/vendor.mediatek.hardware.pq@2.0.so
 lib64/vendor.mediatek.hardware.pq@2.1.so
 lib64/vendor.mediatek.hardware.pq@2.2.so
 lib64/vendor.mediatek.hardware.pq@2.3.so
-vendor/lib/hw/power.default.so
 vendor/lib/hw/power.mt6853.so
-vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6853.so
 
 # Radio
