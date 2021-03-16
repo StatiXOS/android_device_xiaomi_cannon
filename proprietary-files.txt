@@ -947,28 +947,16 @@ vendor/etc/dsi_panel_j22_43_03_0b_vdo_mi.xml
 vendor/etc/dsi_panel_j22_43_03_0c_vdo_mi.xml
 
 # Display-Hardware
-vendor/bin/hw/android.hardware.graphics.allocator@2.0-service
-vendor/bin/hw/android.hardware.graphics.composer@2.1-service
 vendor/bin/hw/android.hardware.memtrack@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
-vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc
-vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc
 vendor/etc/init/android.hardware.memtrack@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
-vendor/lib/hw/android.hardware.graphics.allocator@2.0-impl.so
-vendor/lib/hw/android.hardware.graphics.composer@2.1-impl.so
-vendor/lib/hw/android.hardware.graphics.mapper@2.0-impl-2.1.so
 vendor/lib/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib/hw/gralloc.default.so
 vendor/lib/hw/gralloc.mt6853.so
 vendor/lib/hw/memtrack.mt6853.so
 vendor/lib/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
 vendor/lib/vendor.xiaomi.hardware.displayfeature@1.0.so
-vendor/lib64/hw/android.hardware.graphics.allocator@2.0-impl.so
-vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so
-vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl-2.1.so
 vendor/lib64/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/gralloc.mt6853.so
 vendor/lib64/hw/hwcomposer.mt6853.so
 vendor/lib64/hw/memtrack.mt6853.so
