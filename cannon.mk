@@ -143,7 +143,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6
 
 PRODUCT_PACKAGES += \
-    Camera2
+    Camera2 \
+    libexif
 
 # Configstore
 PRODUCT_PACKAGES += \
