@@ -317,6 +317,14 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2 \
     android.hardware.secure_element@1.0
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0 \
+    android.hardware.power@1.1 \
+    android.hardware.power@1.2 \
+    android.hardware.power@1.3 \
+    android.hardware.power-V1-cpp
+
 # Priv-app Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/product-permissions-mediatek.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/product-permissions-mediatek.xml

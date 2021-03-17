@@ -1308,7 +1308,6 @@ vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.log@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.5-service
 vendor/bin/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-service
-vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
@@ -1322,8 +1321,6 @@ vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.log@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mms@1.5-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
@@ -1331,12 +1328,9 @@ vendor/etc/init/vendor.mediatek.hardware.vpu@1.0-service.rc
 vendor/etc/media_codecs_mediatek_audio.xml
 vendor/etc/media_codecs_mediatek_video.xml
 -vendor/etc/vintf/manifest/vendor.mediatek.hardware.dplanner@2.0-service.xml
-vendor/lib/hw/android.hardware.power@1.3-impl-mediatek.so
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
-vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
-vendor/lib/hw/vendor.mediatek.hardware.power@2.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.5-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib/libmtkcam.atmseventmgr.so
@@ -1357,7 +1351,6 @@ vendor/lib/libMtkOmxGsmDec.so
 vendor/lib/libMtkOmxMp3Dec.so
 vendor/lib/libMtkOmxVdecEx.so
 vendor/lib/libMtkOmxVenc.so
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
 vendor/lib/libmtkshifter_vendor.so
@@ -1373,13 +1366,10 @@ vendor/lib/vendor.mediatek.hardware.mms@1.3.so
 vendor/lib/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib/vendor.mediatek.hardware.mtkcodecservice@1.1.so
-vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib/vendor.mediatek.hardware.netdagent@1.0.so
 vendor/lib/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib/vendor.mediatek.hardware.nvram@1.1.so
 vendor/lib/vendor.mediatek.hardware.nwk_opt@1.0.so
-vendor/lib/vendor.mediatek.hardware.power@2.0.so
-vendor/lib/vendor.mediatek.hardware.power@2.1.so
 vendor/lib/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib/vendor.mediatek.hardware.pq@2.2.so
@@ -1388,12 +1378,9 @@ vendor/lib/vendor.mediatek.hardware.pq@2.4.so
 vendor/lib/vendor.mediatek.hardware.pq@2.5.so
 vendor/lib/vendor.mediatek.hardware.qt@1.0.so
 vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
-vendor/lib64/hw/android.hardware.power@1.3-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.power@2.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.5-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/libmtk-ril.so
@@ -1466,7 +1453,6 @@ vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so
 vendor/lib64/libMtkOmxCore.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so
 vendor/lib64/libmtkrilutils.so
@@ -1493,7 +1479,6 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mtkcodecservice@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@1.1.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@1.2.so
@@ -1505,9 +1490,6 @@ vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
-vendor/lib64/vendor.mediatek.hardware.power@1.1.so
-vendor/lib64/vendor.mediatek.hardware.power@2.0.so
-vendor/lib64/vendor.mediatek.hardware.power@2.1.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
@@ -1584,27 +1566,66 @@ vendor/lib64/libnir_neon_driver.so|c8333fcc2fd8c8a92abe02ea88a051c627fa085d
 vendor/lib64/libnir_neon_driver_ndk.mtk.so|58a4322988d1f224e126a42897a0289a14b50262
 -vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-dsp-gpu.xml|2588438a71de5484d0fd8e862c554a2d256aca82
 
-# Perf
-lib/libmtkperf_client.so
-lib64/libmtkperf_client.so
+# Perf - from Redmi/cannon/cannon:11/RP1A.200720.011/21.2.4:user/release-keys
+lib/libmtkperf_client.so|2f274d5d672963619756c82c745f8a232e315829
+lib64/libmtkperf_client.so|bac273e86a791fdaee73c4a14bf694e7cacfd6e9
+lib64/libperfctl.so|95a1eee890f32f7a2f3635c8cd2b4568691da7e2
+vendor/lib/libmtkperf_client_vendor.so|3fb06f2219b2c8883b83668ed5f598a7eec3e1f7
+vendor/lib/libperfctl_vendor.so|f9e7165aac8261f6fa90e282f21b4f23748ca700
+vendor/lib64/libmtkperf_client_vendor.so|9127dbbb6f833e5c0a7232ec25c4f9e2965ba0c1
+vendor/lib64/libperfctl_vendor.so|12f4dcedfffbd0e8f0430428ce72fe197aac97aa
 
-# Power-Hardware
-lib/vendor.mediatek.hardware.power@2.0.so
-lib/vendor.mediatek.hardware.power@2.1.so
-lib/vendor.mediatek.hardware.mtkpower@1.0.so
+# Picture Quality
 lib/vendor.mediatek.hardware.pq@2.0.so
 lib/vendor.mediatek.hardware.pq@2.1.so
 lib/vendor.mediatek.hardware.pq@2.2.so
 lib/vendor.mediatek.hardware.pq@2.3.so
-lib64/vendor.mediatek.hardware.mtkpower@1.0.so
-lib64/vendor.mediatek.hardware.power@2.0.so
-lib64/vendor.mediatek.hardware.power@2.1.so
 lib64/vendor.mediatek.hardware.pq@2.0.so
 lib64/vendor.mediatek.hardware.pq@2.1.so
 lib64/vendor.mediatek.hardware.pq@2.2.so
 lib64/vendor.mediatek.hardware.pq@2.3.so
-vendor/lib/hw/power.mt6853.so
-vendor/lib64/hw/power.mt6853.so
+
+# Power - from Redmi/cannon/cannon:11/RP1A.200720.011/21.2.4:user/release-keys
+lib/libpowerhalwrap.so|072070943b0c996b542ba6f6ebf14c5081dd987a
+lib/libpowerhalwrap_jni.so|28d47424403809a614c5ea22c2855c10b8071526
+lib/libpowerkeeper_jni.so|53eb5fd9443ce949adbd2cfe83d20c682a91dea7
+lib64/libpowerhalwrap.so|080183618941b0e2d1fecf653aa7690ac1c36298
+lib64/libpowerhalwrap_jni.so|247fcae99cdc21e2ce0848d80a59b49d5ac12473
+lib64/libpowerkeeper_jni.so|af56f2dd4367dd8b398c32c28b2da115777ee62e
+system_ext/lib/vendor.mediatek.hardware.mtkpower@1.0.so|ec5ffc5b9106af6f9f230ea232ffabbb4e45c80f
+system_ext/lib/vendor.mediatek.hardware.mtkpower@1.1.so|44acae836bfbab3f7287b765872332fbbdc26ef5
+system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.0.so|e8c25db49ada1284664da4c2500eae8ce39f2f3a
+system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.1.so|14886ea555658310174c2d8a262637c60234c051
+system_ext/lib64/vendor.mediatek.hardware.power@2.0.so|2bb2941e8ab1b27c698c9281763a0fb7c5af796e
+system_ext/lib64/vendor.mediatek.hardware.power@2.1.so|12dce00fa788ff31a55b23e36eed2bb0d330f8e4
+vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service|25d9f4fb5bb11da96d4ff86aa3418729d88333b3
+vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc|cf2bcaff95f4214f4dcebe37b1faf37297059ae5
+vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc|1a7c82fde63ddf0815938f554550a05edb473f39
+vendor/etc/power_app_cfg.xml|25060391cb8de1cd09b20382c3a13831981694b7
+vendor/etc/powercontable.xml|f6ac7911113fcfbaf0dd0c4d519ec98fda3132e9
+vendor/etc/powerscntbl.xml|fdf9cf70f7384b8012ba35ae8bda5143642f80c6
+vendor/lib/android.hardware.power-V1-ndk_platform.so|6557c6f026ecca479be50a34f67a06012355f886
+vendor/lib/hw/power.mt6853.so|3265b5c1913a068d94823dd119178418207c3a03
+vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so|625c7e066798f7e590c6fa816b695b015fb3cf86
+vendor/lib/libpowerhal.so|cc9cc1374144e538cd53bf94ddc4c7b463f947b3
+vendor/lib/libpowerhalwrap_vendor.so|77b5f1e5e1a2b51dd994c794dfb8e92196b7c459
+vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so|8b1a7d861cf60828342613801aea520f699c16cc
+vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so|7275a2c824faac0e8f1b201c61679c21b8ffb106
+vendor/lib64/android.hardware.power-V1-ndk_platform.so|62678973010870dbb54340dabadd63f09fd1c4b1
+vendor/lib64/android.hardware.power-service-mediatek.so|0319cedf79a27338072d7a858480ef3536a9f535
+vendor/lib64/hw/power.mt6853.so|54347e19f13ad438840987f3ca8251880152b867
+vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so|e65af3341b5ca5438aeb253c087aaf3311bd8a99
+vendor/lib64/libpowerhal.so|d44861485d243b4a4ea2235b8cfab4f8609bbc92
+vendor/lib64/libpowerhalwrap_vendor.so|ac08ef7d91fa73544178733df618ab4ecbc9005f
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so|494f8735f271433bc4fb88a6c93a4059f6b188ac
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so|a2112247787b8ab5156e4a287db3a373711929a7
+vendor/lib64/vendor.mediatek.hardware.power@1.1.so|1e11271e3297192f0456e1f123cbca0e0a225b0e
+vendor/lib64/vendor.mediatek.hardware.power@2.0.so|5dda0986608addffe4d8212ee6d59791a49aa39a
+-vendor/etc/vintf/manifest/power-default.xml|5d40dc3ab9bbcf24810776dccde685b8f565e29b
+
+# Power NDK - from AOSP-Master Prebuilt VNDK-30
+vendor/lib/android.hardware.power-V1-ndk_platform.so|6557c6f026ecca479be50a34f67a06012355f886
+vendor/lib64/android.hardware.power-V1-ndk_platform.so|62678973010870dbb54340dabadd63f09fd1c4b1
 
 # Radio
 -framework/mediatek-framework-net.jar
@@ -1894,9 +1915,6 @@ vendor/etc/mpe.conf
 vendor/etc/mtk_omx_core.cfg
 vendor/etc/partition_permission.sh
 vendor/etc/pm_test_item_config.xml
-vendor/etc/powercontable.xml
-vendor/etc/powerscntbl.xml
-vendor/etc/power_app_cfg.xml
 vendor/etc/security/cacerts/00673b5b.0
 vendor/etc/security/cacerts/04f60c28.0
 vendor/etc/security/cacerts/0d69c7e1.0
@@ -2162,10 +2180,7 @@ vendor/lib/libnvram_platform.so
 vendor/lib/libnvram_sec.so
 vendor/lib/libnwk_opt_halwrap_vendor.so
 vendor/lib/libopus.so
-vendor/lib/libperfctl_vendor.so
 vendor/lib/libpixelflinger.so
-vendor/lib/libpowerhal.so
-vendor/lib/libpowerhalwrap_vendor.so
 vendor/lib/libpq_cust_base.so
 vendor/lib/libpq_prot.so
 vendor/lib/librgbwlightsensor.so
@@ -2346,10 +2361,7 @@ vendor/lib64/libnvram_daemon_callback.so
 vendor/lib64/libnvram_platform.so
 vendor/lib64/libnvram_sec.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
-vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpixelflinger.so
-vendor/lib64/libpowerhal.so
-vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/libpq_cust_base.so
 vendor/lib64/libpq_prot.so
 vendor/lib64/libratconfig.so
