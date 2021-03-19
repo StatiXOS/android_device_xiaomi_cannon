@@ -112,4 +112,4 @@ product /product ext4 ro wait,,avb,logical,first_stage_mount
 
 /dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
 
-/dev/block/zram0 none swap defaults zramsize=2147483648,max_comp_streams=8
+/dev/block/zram0 none swap defaults zramsize=2147483648,max_comp_streams=8,zram_loopback_path=/data/per_boot/zram_swap,zram_loopback_size=512M

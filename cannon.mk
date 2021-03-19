@@ -446,4 +446,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     mtk-wifi-service
 
+# ZRAM writeback
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.zram.mark_idle_delay_mins=60 \
+    ro.zram.first_wb_delay_mins=180 \
+    ro.zram.periodic_wb_delay_hours=24
+
 $(call inherit-product-if-exists, vendor/xiaomi/cannon/device-vendor.mk)

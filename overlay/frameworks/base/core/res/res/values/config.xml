@@ -437,4 +437,7 @@
 
     <!-- Flag specifying whether VoLTE is available on device -->
     <bool name="config_device_vt_available">true</bool>
+
+    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
+    <bool name="config_zramWriteback">true</bool>
 </resources>
