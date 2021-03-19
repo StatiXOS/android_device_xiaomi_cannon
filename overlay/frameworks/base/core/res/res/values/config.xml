@@ -352,6 +352,9 @@
         <item>1.089058</item>
     </string-array>
 
+    <!-- Enable Night display, which requires HWC 2.0. -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+
     <string-array name="config_nightDisplayColorTemperatureCoefficients">
         <item>0.0</item>
         <item>0.0</item>
