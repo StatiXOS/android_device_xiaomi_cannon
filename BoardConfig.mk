@@ -11,6 +11,7 @@ BUILD_BROKEN_DUP_RULES := true
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6853
+TARGET_BOARD_PLATFORM_GPU := mali-g57mc3
 
 # Architechture
 TARGET_ARCH := arm64
