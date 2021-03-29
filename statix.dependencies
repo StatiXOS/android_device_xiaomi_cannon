@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "android_kernel_xiaomi_cannon",
+    "target_path": "kernel/xiaomi/cannon"
+  },
+  {
+    "repository": "android_vendor_xiaomi",
+    "target_path": "vendor/xiaomi"
+  }
+]
