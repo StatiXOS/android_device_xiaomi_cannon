@@ -1,5 +1,9 @@
 [
   {
+    "repository": "android_device_mediatek_sepolicy",
+    "target_path": "device/mediatek/sepolicy"
+  },
+  {
     "repository": "android_kernel_xiaomi_cannon",
     "target_path": "kernel/xiaomi/cannon"
   },
