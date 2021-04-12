@@ -1,5 +1,6 @@
 #
-# Copyright 2021 mvaisakh
+# Copyright (C) 2021 mvaisakh
+# Copyright (C) 2021 StatiXOS
 #
 # SPDX-License-Identifer: Apache-2.0
 
@@ -364,6 +365,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libsensorndkbridge
+
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Thermal
 PRODUCT_PACKAGES += \
