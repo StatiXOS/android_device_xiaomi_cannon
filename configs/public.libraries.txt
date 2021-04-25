@@ -1,9 +1,15 @@
+android.hidl.allocator@1.0.so 64
 libMcClient.so
 libMcRegistry.so
-libneuron_platform.so
+libOpenCL.so
+libnir_neon_driver_ndk.mtk.so
+libcmdl_ndk.mtk.so
+libarmnn_ndk.mtk.so
+libneuron_platform.so 64
+libneuron_runtime.so 64
+libneuron_platform-v29.so
 libion_mtk.so
 libvpu.so
-libOpenCL.so
 libapusys.so
 libmpbase.so
 libmialgoengine.so
