@@ -364,6 +364,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
 
 # Sensors
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0 \
     android.hardware.sensors@2.0 \
