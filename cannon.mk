@@ -165,7 +165,9 @@ PRODUCT_PACKAGES += \
     android.harwdare.memtrack@1.0-service
 
 PRODUCT_PACKAGES += \
-    libdrm
+    libdrm \
+    libhwc2on1adapter \
+    libhwc2onfbadapter
 
 # DRM
 PRODUCT_PACKAGES += \
