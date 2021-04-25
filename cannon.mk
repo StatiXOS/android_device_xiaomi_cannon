@@ -461,11 +461,11 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.2
 
 PRODUCT_PACKAGES += \
-    hostapd \
-    hostapd_cli \
+    hostapd.vendor \
+    hostapd_cli.vendor \
     libwifi-hal \
-    wpa_supplicant \
-    libwpa_client \
+    wpa_supplicant.vendor \
+    libwpa_client.vendor \
     wificond \
     TetheringConfigOverlay \
     WifiOverlay
