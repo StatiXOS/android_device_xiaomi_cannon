@@ -478,9 +478,6 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
 
-PRODUCT_BOOT_JARS += \
-    mtk-wifi-service
-
 # ZRAM writeback
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.zram.mark_idle_delay_mins=60 \
