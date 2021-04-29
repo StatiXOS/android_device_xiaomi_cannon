@@ -1097,16 +1097,6 @@ vendor/etc/init/android.hardware.health@2.0-service.rc
 -product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk
 -product/priv-app/HotwordEnrollmentXGoogleRISCV/HotwordEnrollmentXGoogleRISCV.apk
 
-# Kernel modules
-vendor/lib/modules/bt_drv.ko
-vendor/lib/modules/fmradio_drv.ko
-vendor/lib/modules/fpsgo.ko
-vendor/lib/modules/gps_drv.ko
-vendor/lib/modules/met.ko
-vendor/lib/modules/wlan_drv_gen4m.ko
-vendor/lib/modules/wmt_chrdev_wifi.ko
-vendor/lib/modules/wmt_drv.ko
-
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
