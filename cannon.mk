@@ -472,6 +472,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     libwifi-hal \
+    wpa_cli \
     wpa_supplicant \
     libwpa_client \
     wificond \
