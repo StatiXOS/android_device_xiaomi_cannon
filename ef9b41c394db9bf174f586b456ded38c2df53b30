@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbd9a4f4_eced0c2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-04-30T00:06:39Z",
+      "side": 1,
+      "message": "since we already ship GMS which has Google Messages, this shouldn\u0027t be needed. ",
+      "revId": "ef9b41c394db9bf174f586b456ded38c2df53b30",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
