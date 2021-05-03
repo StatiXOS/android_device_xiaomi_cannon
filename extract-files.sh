@@ -72,6 +72,9 @@ function blob_fixup() {
         vendor/lib64/libapu-platform.so)
             "${PATCHELF}" --replace-needed "libneuron_platform.so" "libneuron_platform-v29.so" "${2}"
             ;;
+        vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
+            "${PATCHELF}" --replace-needed "libwifi-hal.so" "libwifi-hal-mtk.so" "${2}"
+            ;;
     esac
 }
 
