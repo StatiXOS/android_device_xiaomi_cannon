@@ -377,6 +377,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    device/xiaomi/cannon
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
