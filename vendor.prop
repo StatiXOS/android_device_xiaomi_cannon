@@ -113,6 +113,11 @@ ro.lmk.swap_free_low_percentage=20
 ro.logd.size=2M
 ro.mtk_soter_support=1
 
+# Log
+persist.log.tag.GED=S
+persist.log.tag.hwcomposer=S
+persist.log.tag.netd=S
+
 # Media
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
