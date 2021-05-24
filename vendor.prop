@@ -113,6 +113,10 @@ ro.lmk.swap_free_low_percentage=20
 ro.logd.size=2M
 ro.mtk_soter_support=1
 
+# Media
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+
 # Mediatek
 ro.vendor.mtk_emmc_support=1
 debug.mtk_tflite.target_nnapi=29
