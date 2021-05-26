@@ -42,10 +42,6 @@
     <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
     <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
-    <!-- Rounded corner radii -->
-    <dimen name="rounded_corner_radius_bottom">104.0px</dimen>
-    <dimen name="rounded_corner_radius_top">106.0px</dimen>
-
      <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
