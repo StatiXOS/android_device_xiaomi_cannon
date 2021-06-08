@@ -342,7 +342,7 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.braodcastradio@1.0 \
+    android.hardware.broadcastradio@1.0 \
     android.hardware.broadcastradio@1.1 \
     android.hardware.radio@1.0 \
     android.hardware.radio@1.1 \
