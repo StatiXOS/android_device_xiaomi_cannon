@@ -10,10 +10,5 @@
   {
     "repository": "android_vendor_xiaomi_cannon",
     "target_path": "vendor/xiaomi/cannon"
-  },
-  {
-    "repository": "mvaisakh/gcc-arm64",
-    "target_path": "prebuilts/gcc/linux-x86/aarch64/arm64-gcc",
-    "branch": "gcc-master"
   }
 ]
