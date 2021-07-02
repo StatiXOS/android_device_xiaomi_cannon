@@ -354,6 +354,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2 \
     android.hardware.radio.deprecated@1.0
 
+# Remove Package
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Renderscript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
