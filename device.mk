@@ -159,3 +159,7 @@ PRODUCT_PACKAGES += \
     fstab.mt6853 \
     ramdisk-fstab.mt6853 \
     ueventd.mtk.rc
+
+# VNDK
+PRODUCT_PACKAGES += \
+    vndservicemanager
