@@ -15,6 +15,11 @@ $(call inherit-product, vendor/xiaomi/cannon/cannon-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+# Kernel
+TARGET_PREBUILT_KERNEL := device/xiaomi/cannon/prebuilt/Image.gz-dtb
+PRODUCT_COPY_FILES += \
+    $(TARGET_PREBUILT_KERNEL):kernel
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
