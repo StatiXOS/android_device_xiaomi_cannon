@@ -1,6 +1,9 @@
 on early-init
     write /sys/module/musb_hdrc/parameters/kernel_init_done 1
 
+on init
+    setprop sys.usb.configfs 1
+
 on post-fs
     setprop vendor.usb.vid "0x0E8D"
     mkdir /dev/usb-ffs 0770 shell shell
@@ -40,7 +43,6 @@ on post-fs
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
 
 on boot
-    setprop sys.usb.configfs 1
     setprop sys.usb.ffs.aio_compat 1
     setprop vendor.usb.controller "musb-hdrc"
     setprop vendor.usb.acm_cnt 0
