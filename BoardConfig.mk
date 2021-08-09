@@ -134,10 +134,6 @@ BOARD_SUPER_PARTITION_ERROR_LIMIT := 9126805004
 # Display
 TARGET_SCREEN_DENSITY := 440
 
-# Kernel Modules
-BOARD_VENDOR_KERNEL_MODULES  += \
-	$(wildcard device/xiaomi/cannon-kernel/*.ko)
-
 # Props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
