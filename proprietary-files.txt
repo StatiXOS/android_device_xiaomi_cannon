@@ -809,6 +809,7 @@ vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
 vendor/etc/dsi_panel_j22_42_02_0a_vdo_mi.xml
 vendor/etc/dsi_panel_j22_43_03_0b_vdo_mi.xml
 vendor/etc/dsi_panel_j22_43_03_0c_vdo_mi.xml
+vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
 vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
