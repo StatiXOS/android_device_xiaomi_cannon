@@ -134,6 +134,10 @@ BOARD_SUPER_PARTITION_ERROR_LIMIT := 9126805004
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# HIDL VINTF Manifsets
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+
 # Props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
