@@ -1179,7 +1179,6 @@ vendor/bin/hw/android.hardware.secure_element@1.0-service-mediatek
 vendor/bin/hw/android.hardware.sensors@2.0-service-mediatek
 vendor/bin/hw/android.hardware.usb@1.1-service-mediatek
 vendor/bin/hw/android.hardware.vibrator@1.0-service-mediatek
-vendor/bin/hw/vendor.mediatek.hardware.aee@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.dplanner@2.0-service
 vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.5-service
@@ -1193,7 +1192,6 @@ vendor/etc/init/android.hardware.secure_element@1.0-service-mediatek.rc
 vendor/etc/init/android.hardware.sensors@2.0-service-mediatek.rc
 vendor/etc/init/android.hardware.usb@1.1-service-mediatek.rc
 vendor/etc/init/android.hardware.vibrator@1.0-service-mediatek.rc
-vendor/etc/init/vendor.mediatek.hardware.aee@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.dplanner@2.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mms@1.5-service.rc
@@ -1352,7 +1350,6 @@ vendor/lib64/libmtktinyxml.so
 vendor/lib64/libmtkutils.so
 vendor/lib64/libmtk_drvb.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
-vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.apusys@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so
@@ -1584,31 +1581,11 @@ vendor/lib64/vendor.xiaomi.hardware.touchfeature@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.vsimapp@1.0.so
 
 # Misc
-system_ext/bin/aee
-system_ext/bin/aee_aed
-system_ext/bin/aee_aed64
-system_ext/bin/aee_archive
-system_ext/bin/aee_core_forwarder
-system_ext/bin/aee_dumpstate
-system_ext/bin/emdlogger1
-system_ext/bin/emdlogger2
-system_ext/bin/emdlogger3
-system_ext/bin/emdlogger5
-system_ext/bin/mdlogger
 system_ext/bin/rtt
 system_ext/bin/trace
-system_ext/etc/aee-config
 system_ext/etc/compatconfig/settings-platform-compat-config.xml
 system_ext/etc/custom.conf
 system_ext/etc/group
-system_ext/etc/init/aee_aed.rc
-system_ext/etc/init/aee_aed64.rc
-system_ext/etc/init/emdlogger1.rc
-system_ext/etc/init/emdlogger2.rc
-system_ext/etc/init/emdlogger3.rc
-system_ext/etc/init/emdlogger5.rc
-system_ext/etc/init/hw/init.aee.rc
-system_ext/etc/init/mdlogger.rc
 system_ext/etc/permissions/com.android.carrierconfig.xml
 system_ext/etc/permissions/com.android.systemui.xml
 system_ext/etc/permissions/privapp-permissions-google-system-ext.xml
@@ -1631,7 +1608,6 @@ system_ext/lib/libpngt.so
 system_ext/lib/libtess.so
 system_ext/lib/libtflite_mtk.mtk.so
 system_ext/lib/libvpuapi.mtk.so
-system_ext/lib/vendor.mediatek.hardware.aee@1.0.so
 system_ext/lib/vendor.mediatek.hardware.apuware.apusys@1.0.so
 system_ext/lib/vendor.mediatek.hardware.apuware.utils@1.0.so
 system_ext/lib/vendor.mediatek.hardware.apuware.xrp@1.0.so
@@ -1664,7 +1640,6 @@ system_ext/lib64/libpngt.so
 system_ext/lib64/libtess.so
 system_ext/lib64/libtflite_mtk.mtk.so
 system_ext/lib64/libvpuapi.mtk.so
-system_ext/lib64/vendor.mediatek.hardware.aee@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.apuware.utils@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so
@@ -1685,11 +1660,6 @@ system_ext/priv-app/Settings/lib/arm64/libjpgt.so
 system_ext/priv-app/Settings/lib/arm64/liblept.so
 system_ext/priv-app/Settings/lib/arm64/libpngt.so
 system_ext/priv-app/Settings/lib/arm64/libtess.so
-vendor/bin/aeev
-vendor/bin/aee_aedv
-vendor/bin/aee_aedv64
-vendor/bin/aee_archivev
-vendor/bin/aee_dumpstatev
 vendor/bin/applypatch
 vendor/bin/atcid
 vendor/bin/atci_service
@@ -1762,7 +1732,6 @@ vendor/bin/wmt_loader
 vendor/data/misc/ProjectConfig.mk
 vendor/etc/.tp/.ht120.mtc
 vendor/etc/a2dp_in_audio_policy_configuration.xml
-vendor/etc/aee-config
 vendor/etc/apdb/APDB_MT6853_S01__W2041
 vendor/etc/apdb/APDB_MT6853_S01__W2041_ENUM
 vendor/etc/armnn_app.config
@@ -1786,8 +1755,6 @@ vendor/etc/ecc_list_preference.xml
 vendor/etc/factory.ini
 vendor/etc/fstb.cfg
 vendor/etc/gbe.cfg
-vendor/etc/init/aee_aedv.rc
-vendor/etc/init/aee_aedv64.rc
 vendor/etc/init/atcid.rc
 vendor/etc/init/atci_service.rc
 vendor/etc/init/audiocmdservice_atci.rc
