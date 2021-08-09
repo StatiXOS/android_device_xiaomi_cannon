@@ -202,6 +202,10 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1.\
     android.hardware.nfc@1.2
 
+# Public libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-V1
