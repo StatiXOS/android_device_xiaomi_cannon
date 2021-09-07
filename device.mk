@@ -231,7 +231,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     capture.sh \
     capture_headsetmic.sh \
-    install-recovery.sh \
     mishow.sh \
     playback.sh \
     playback_headset.sh \

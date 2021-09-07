@@ -1797,7 +1797,6 @@ vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/slad.rc
 vendor/etc/init/vendor.microtrust.hardware.se@1.0-service.rc
 vendor/etc/init/vendor.qti.sla.service@1.0-service.rc
-vendor/etc/init/vendor_flash_recovery.rc
 vendor/etc/init/vpud.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/init_panel_info.sh
@@ -2219,7 +2218,6 @@ vendor/lib64/vendor.qti.sla.service@1.0-impl.so
 vendor/lib64/vendor.qti.sla.service@1.0.so
 vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/wechat.beanpod.so
-vendor/recovery-from-boot.p
 vendor/res/images/lcd_test_00.png
 vendor/res/images/lcd_test_01.png
 vendor/res/images/lcd_test_02.png
