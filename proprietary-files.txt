@@ -1488,11 +1488,17 @@ vendor/lib64/hw/vibrator.mt6853.so
 
 # WiFi
 bin/iwpriv
+vendor/bin/wpa_cli
+vendor/bin/hw/hostapd
+vendor/bin/hw/wpa_supplicant
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
 -vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 -vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
+vendor/lib/libwpa_client.so
+vendor/lib64/libwpa_client.so
+vendor/lib64/libwifi-hal.so
 
 # Xiaomi
 vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
