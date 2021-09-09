@@ -102,7 +102,8 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
-    libalsautils
+    libalsautils \
+    libtinycompress
 
 # CAS
 PRODUCT_PACKAGES += \
