@@ -367,6 +367,10 @@ ro.vendor.mtk_modem_monitor_support=1
 ro.vendor.md_log_memdump_wait=15
 ro.vendor.connsys.dedicated.log=1
 
+# Media
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+
 # Mediatek
 ro.vendor.mediatek.platform=MT6853
 ro.vendor.have_aeev_feature=1
