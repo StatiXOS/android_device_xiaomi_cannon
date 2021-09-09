@@ -114,7 +114,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4 \
     android.hardware.camera.provider@2.5 \
-    android.hardware.camera.provider@2.6
+    android.hardware.camera.provider@2.6 \
+    android.hardware.camera.device@3.5
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -132,6 +133,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-resources \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
+
+PRODUCT_PACKAGES += \
+    libdrm
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -196,6 +200,9 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.1 \
     android.hardware.neuralnetworks@1.2 \
     android.hardware.neuralnetworks@1.3
+
+PRODUCT_PACKAGES += \
+    libtextclassifier_hash
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -267,6 +274,13 @@ PRODUCT_PACKAGES += \
 # Secure Element
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0
+
+PRODUCT_PACKAGES += \
+    libchrome
+
+# Sensors
+PRODUCT_PACKAGES += \
+    libsensorndkbridge
 
 # Thermal
 PRODUCT_PACKAGES += \
