@@ -151,6 +151,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-service \
     android.hardware.gnss@2.1-impl
 
+PRODUCT_PACKAGES += \
+    libandroid_net
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
