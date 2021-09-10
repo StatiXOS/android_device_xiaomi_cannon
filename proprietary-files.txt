@@ -1494,6 +1494,7 @@ vendor/bin/hw/wpa_supplicant
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
+-vendor/etc/vintf/manifest/manifest.xml:vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 -vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 -vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
 vendor/lib/libwpa_client.so
