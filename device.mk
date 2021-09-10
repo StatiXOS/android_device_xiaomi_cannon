@@ -224,7 +224,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-V1
+    android.hardware.power-V1 \
+    android.hardware.power-ndk_platform
 
 # Radio
 PRODUCT_PACKAGES += \
