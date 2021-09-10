@@ -1431,6 +1431,7 @@ vendor/lib64/hw/power.mt6853.so
 vendor/lib/libvsim.so
 
 # Sensors
+vendor/etc/sensors/hals.conf
 vendor/lib/hw/sensors.touch.so
 vendor/lib/libssccalapi.so
 vendor/lib64/hw/sensors.mt6853.so
