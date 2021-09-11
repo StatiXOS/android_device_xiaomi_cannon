@@ -160,6 +160,10 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.memory.block@1.0
 
+PRODUCT_PACKAGES += \
+    libhidltransport.vendor \
+    libhwbinder.vendor
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
