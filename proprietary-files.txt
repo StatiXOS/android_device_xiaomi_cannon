@@ -1160,6 +1160,7 @@ system_ext/lib64/vendor.mediatek.hardware.gpu@1.0.so
 vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
 vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/meow.cfg
+-vendor/etc/vintf/manifest/android.hardware.gpu@1.0-service.xml:vendor/etc/vintf/manifest/vendor.mediatek.hardware.gpu@1.0-service.xml
 vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/egl/egl.cfg
 vendor/lib/egl/libGLES_mali.so
