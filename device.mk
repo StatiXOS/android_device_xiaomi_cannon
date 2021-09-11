@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
 PRODUCT_PACKAGES += \
-    libdrm
+    libdrm.vendor
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -211,7 +211,7 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3
 
 PRODUCT_PACKAGES += \
-    libtextclassifier_hash
+    libtextclassifier_hash.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -297,7 +297,7 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0
 
 PRODUCT_PACKAGES += \
-    libchrome
+    libchrome.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
