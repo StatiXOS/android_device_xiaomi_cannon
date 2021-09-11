@@ -11,6 +11,8 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/cannon/cannon-vendor.mk)
 
+PRODUCT_SHIPPING_API_LEVEL := 29
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
