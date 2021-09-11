@@ -151,7 +151,6 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-service \
     android.hardware.gnss@2.1-impl
 
 PRODUCT_PACKAGES += \
