@@ -226,6 +226,16 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 lib64/libaptXHD_encoder.so
 lib64/libaptX_encoder.so
 
+# CIT
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
+vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
+
 # Camera
 system_ext/lib/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/bin/hw/camerahalserver
