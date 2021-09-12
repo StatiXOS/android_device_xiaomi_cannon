@@ -105,7 +105,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libalsautils \
-    libtinycompress
+    libtinycompress \
+    libtinyxml
 
 # CAS
 PRODUCT_PACKAGES += \
