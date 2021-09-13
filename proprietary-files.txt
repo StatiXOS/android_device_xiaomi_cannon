@@ -1158,6 +1158,8 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/MNL_Config.xml
 vendor/etc/init/android.hardware.gnss@2.1-service-mediatek.rc
+vendor/lib/hw/gps.default.so
+vendor/lib64/hw/gps.default.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
 
 # Gatekeeper
