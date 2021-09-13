@@ -1,3 +1,6 @@
+## All proprietary files from this list, unless pinned and noted otherwise,
+## are from Redmi Note 9T (cannong-user-11-RP1A.200720.011-V12.5.4.0.RJEMIXM-release-keys)
+
 # APU
 system_ext/lib/libapuwareapusys.mtk.so
 system_ext/lib/libapuwareutils.mtk.so
