@@ -213,7 +213,9 @@ PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service
 
 PRODUCT_PACKAGES += \
-    libminijail
+    com.android.media.swcodec \
+    libminijail \
+    libsfplugin_ccodec
 
 # MNLD
 PRODUCT_PACKAGES += \
