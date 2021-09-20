@@ -409,6 +409,8 @@ on post-fs-data
     chown media system /dev/video0
     chmod 0660 /dev/video1
     chown media system /dev/video1
+    chmod 0666 /dev/video2
+    chmod 0666 /dev/video3
     mkdir /data/vendor/vcodec 0770 media system
     mkdir /data/vendor/vcodec/log 0770 media system
     mkdir /data/vendor/vcodec/in 0770 media system
