@@ -117,6 +117,10 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libtinyxml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    audio.bluetooth.default
+
 # CAS
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.1 \
