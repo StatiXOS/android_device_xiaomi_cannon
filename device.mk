@@ -114,6 +114,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libalsautils \
+    libnbaio_mono \
     libtinycompress \
     libtinyxml
 
