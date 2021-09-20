@@ -1447,6 +1447,10 @@ vendor/lib64/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 vendor/lib64/vendor.mediatek.hardware.mtkcodecservice@1.1.so
 
 # Mediatek
+-framework/mediatek-common.jar
+-framework/mediatek-framework-net.jar
+-framework/mediatek-framework.jar
+-framework/mediatek-services.jar
 system_ext/lib/libtflite_mtk.mtk.so
 system_ext/lib64/libtflite_mtk.mtk.so
 system_ext/lib/vendor.mediatek.hardware.atci@1.0.so
@@ -1948,6 +1952,13 @@ vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
 
 # Radio
+-framework/mediatek-ims-base.jar
+-framework/mediatek-ims-common.jar
+-framework/mediatek-ims-extension-plugin.jar
+-framework/mediatek-ims-legacy.jar
+-framework/mediatek-telecom-common.jar
+-framework/mediatek-telephony-base.jar
+-framework/mediatek-telephony-common.jar
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib/vendor.mediatek.hardware.mtkradioex@1.0.so
