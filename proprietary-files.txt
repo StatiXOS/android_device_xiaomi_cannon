@@ -186,6 +186,10 @@ vendor/etc/audio_param/VoIPVol_AudioParam.xml
 vendor/etc/audio_param/VoIPVol_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPVolUI_AudioParam.xml
 vendor/etc/audio_param/VoIPVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWDspAec_AudioParam.xml
+vendor/etc/audio_param/VoWDspAec_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWHwVad_AudioParam.xml
+vendor/etc/audio_param/VoWHwVad_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
 vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
