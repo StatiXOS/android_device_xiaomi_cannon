@@ -1137,10 +1137,8 @@ vendor/firmware/WMT_SOC.cfg
 # FM-Radio
 system_ext/lib64/libfmjni.so
 vendor/etc/init/init.fmradio_drv.rc
-vendor/lib/libfmq.so
 vendor/lib/libhfmanager.so
 vendor/lib/libhfmanagerwrapper.so
-vendor/lib64/libfmq.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 
