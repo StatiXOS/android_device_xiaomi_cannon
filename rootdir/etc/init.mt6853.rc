@@ -783,6 +783,9 @@ on boot
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
+    # Disable Serial Console notification
+    setprop init.svc.console stopped
+
 
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
