@@ -12,3 +12,6 @@ persist.sys.fp.goodix.                                  u:object_r:vendor_fp_pro
 persist.vendor.sys.fp.                                  u:object_r:vendor_fp_prop:s0
 ro.hardware.fp                                          u:object_r:vendor_fp_prop:s0
 vendor.fps_hal.                                         u:object_r:vendor_fp_prop:s0
+
+# RILD
+ro.telephony.default_network u:object_r:radio_prop:s0
