@@ -59,6 +59,7 @@ vendor/lib/libaurisysdemo.so
 vendor/lib/libawinicsmartpaparse.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libmisound.so
+vendor/lib/libtinyxml.so
 vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/soundfx/libmisoundfx.so
@@ -85,6 +86,7 @@ vendor/lib64/libawinicsmartpaparse.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
 vendor/lib64/libmisound.so
+vendor/lib64/libtinyxml.so
 vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
