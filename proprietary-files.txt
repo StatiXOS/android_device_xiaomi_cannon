@@ -31,14 +31,11 @@ vendor/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so
 # Audio
 system_ext/lib/vendor.mediatek.hardware.audio@6.1.so
 system_ext/lib64/vendor.mediatek.hardware.audio@6.1.so
-vendor/bin/hw/android.hardware.audio.service.mediatek
 vendor/etc/apdb/APDB_MT6853_S01__W2041
 vendor/etc/apdb/APDB_MT6853_S01__W2041_ENUM
-vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/etc/misound_res.bin
 vendor/etc/misound_res_headphone.bin
 vendor/etc/misound_res_spk.bin
-vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib/hw/audio.primary.mt6853.so
 vendor/lib/hw/audio.r_submix.mt6853.so
 vendor/lib/hw/audio.usb.mt6853.so
@@ -64,7 +61,6 @@ vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
-vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib64/hw/audio.primary.mt6853.so
 vendor/lib64/hw/audio.r_submix.mt6853.so
 vendor/lib64/hw/audio.usb.mt6853.so
