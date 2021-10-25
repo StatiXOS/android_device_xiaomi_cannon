@@ -229,13 +229,6 @@ PRODUCT_PACKAGES += \
     libminijail \
     libsfplugin_ccodec
 
-# Mediatek Framework
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework-net \
-    mediatek-framework \
-    mediatek-services
-
 # MNLD
 PRODUCT_PACKAGES += \
     libcurl
@@ -274,15 +267,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.3.vendor
 
 # Radio
-PRODUCT_BOOT_JARS += \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-ims-extension-plugin \
-    mediatek-ims-legacy \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
-
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0.vendor \
     android.hardware.radio@1.1.vendor \
