@@ -133,6 +133,11 @@ TARGET_SCREEN_DENSITY := 440
 # HIDL VINTF Manifsets
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+ODM_MANIFEST_FILES   := \
+	$(DEVICE_PATH)/configs/manifest_dsds.xml \
+	$(DEVICE_PATH)/configs/manifest_qsqs.xml \
+	$(DEVICE_PATH)/configs/manifest_ss.xml \
+	$(DEVICE_PATH)/configs/manifest_tsts.xml
 
 # Props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
