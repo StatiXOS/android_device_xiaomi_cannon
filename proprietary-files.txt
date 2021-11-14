@@ -1581,6 +1581,7 @@ vendor/bin/md_monitor_ctrl
 vendor/bin/meta_tst
 vendor/bin/muxreport
 vendor/bin/netdc
+vendor/bin/netdagent
 vendor/bin/pnscr
 vendor/bin/rttv
 vendor/bin/setup_fct
