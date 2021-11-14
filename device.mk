@@ -252,7 +252,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    Tag
+    Tag \
+    vendor.nxp.nxpese@1.0 \
+    vendor.nxp.nxpnfc@1.0
 
 # Protobuf
 PRODUCT_PACKAGES += \
