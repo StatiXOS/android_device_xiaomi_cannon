@@ -210,6 +210,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayouts/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/configs/keylayouts/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
 
+# Libinit
+PRODUCT_PACKAGES += \
+    libinit_cannon
+
 # Libxml2
 PRODUCT_PACKAGES += \
     libxml2.vendor
