@@ -139,6 +139,10 @@ ODM_MANIFEST_FILES   := \
 	$(DEVICE_PATH)/configs/manifest_ss.xml \
 	$(DEVICE_PATH)/configs/manifest_tsts.xml
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_cannon
+TARGET_RECOVERY_DEVICE_MODULES := libinit_cannon
+
 # Props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
