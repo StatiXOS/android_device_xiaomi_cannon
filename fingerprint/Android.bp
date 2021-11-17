@@ -1,0 +1,34 @@
+//
+// Copyright (C) 2021 StatiXOS
+//
+
+package {
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "hardware_interfaces_license"
+    // to get the below license kinds:
+    //   SPDX-license-identifier-Apache-2.0
+    default_applicable_licenses: ["hardware_interfaces_license"],
+}
+
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint-service.cannon",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["fingerprint-cannon.rc"],
+    vintf_fragments: ["fingerprint-cannon.xml"],
+    local_include_dirs: ["include"],
+    srcs: [
+        "CancellationSignal.cpp",
+        "Fingerprint.cpp",
+        "Session.cpp",
+        "WorkerThread.cpp",
+        "main.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.biometrics.fingerprint-V1-ndk_platform",
+        "android.hardware.biometrics.common-V1-ndk_platform",
+    ],
+}
