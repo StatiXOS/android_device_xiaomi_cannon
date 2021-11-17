@@ -1023,7 +1023,6 @@ vendor/lib64/libmfido.so
 vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
 
 # Fingerprint
--vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
 -vendor/etc/vintf/manifest/fp_cap_manifest.xml
 vendor/lib/hw/fingerprint.fpc.so
 vendor/lib/hw/fingerprint.goodix.so
