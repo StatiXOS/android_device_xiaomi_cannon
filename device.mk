@@ -166,7 +166,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor
+    android.hardware.biometrics.fingerprint-service.cannon
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

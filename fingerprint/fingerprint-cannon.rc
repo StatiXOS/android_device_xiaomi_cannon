@@ -1,0 +1,4 @@
+service vendor.fingerprint-cannon /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.cannon
+    class late_hal
+    user system
+    group system input uhid
