@@ -508,9 +508,6 @@ on post-fs-data
 
     mkdir /data/amit/
 
-    # AudioDump
-    mkdir /data/vendor/audiohal
-
     # GPIO
     chmod 0666 /dev/mtgpio
 
