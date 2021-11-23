@@ -158,6 +158,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
