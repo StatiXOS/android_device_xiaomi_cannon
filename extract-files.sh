@@ -66,6 +66,9 @@ function blob_fixup() {
         vendor/lib64/hw/audio.primary.mt6853.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
             ;;
+        lib/libmtk_vt_service.so)
+           "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
+           ;;
     esac
 }
 

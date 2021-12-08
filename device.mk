@@ -209,6 +209,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
+PRODUCT_PACKAGES += \
+    libshim_vtservice
+
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service \
