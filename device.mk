@@ -292,6 +292,12 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1.vendor \
     android.hardware.power@1.3.vendor
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0.vendor \
