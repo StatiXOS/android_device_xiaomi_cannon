@@ -28,4 +28,7 @@
 
     <!-- Doze: can we assume the pickup sensor includes a proximity check? -->
     <bool name="doze_pickup_performs_proximity_check">true</bool>
+
+    <!-- Camera 1 is the front camera on cannon -->
+    <string translatable="false" name="config_protectedCameraId">1</string>
 </resources>
