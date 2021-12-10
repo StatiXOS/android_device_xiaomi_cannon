@@ -2,9 +2,6 @@
 ro.camera.sound.forced=0
 ro.audio.silent=0
 ro.config.vc_call_vol_default=4
-ro.vendor.audio.soundfx.type=mi
-ro.vendor.audio.soundfx.usb=true
-ro.vendor.audio.sos=true
 ro.config.media_vol_default=10
 
 # Binder
