@@ -1422,7 +1422,9 @@ system_ext/lib/libjpgt.so
 system_ext/lib/libpngt.so
 system_ext/lib64/libjpgt.so
 system_ext/lib64/libpngt.so
+vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-service
+vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
 vendor/etc/mtk_omx_core.cfg
 vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
