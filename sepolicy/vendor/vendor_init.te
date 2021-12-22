@@ -1,0 +1,2 @@
+get_prop(vendor_init, recovery_update_prop)
+get_prop(vendor_init, vts_status_prop)
