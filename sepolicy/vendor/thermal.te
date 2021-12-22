@@ -1,0 +1,2 @@
+# Get tel_switch_prop
+get_prop(thermal, tel_switch_prop)
