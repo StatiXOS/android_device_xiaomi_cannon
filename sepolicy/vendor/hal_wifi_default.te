@@ -1,0 +1,2 @@
+# Set fw prop
+set_prop(hal_wifi_default, wlan_fw_prop)
