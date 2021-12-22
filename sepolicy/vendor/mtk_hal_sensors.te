@@ -1,0 +1,1 @@
+allow mtk_hal_sensors sysfs_bus:dir search;
