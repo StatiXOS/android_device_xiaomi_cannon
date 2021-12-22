@@ -1,0 +1,23 @@
+allow hal_fingerprint_default init:unix_stream_socket connectto;
+
+# Binder call for power hal
+binder_call(hal_fingerprint_default, mtk_hal_power)
+
+# Allow fingerprint HAL to find power hwservice
+allow hal_fingerprint_default mtk_hal_power_hwservice:hwservice_manager find;
+
+allow hal_fingerprint_default property_socket:sock_file write;
+
+# Allow fingerprint HAL to read boot modes
+allow hal_fingerprint_default sysfs_boot_mode:file { open read };
+
+# Allow fingerprint HAL to setup fingerprint database files
+allow hal_fingerprint_default vendor_data_file:dir rw_file_perms;
+allow hal_fingerprint_default vendor_data_file:file rw_file_perms;
+
+# Create fingerprint HAL entrypoint
+allow hal_fingerprint_default hal_fingerprint_default_exec:file entrypoint;
+
+# Get and Set fingerprint properties
+get_prop(hal_fingerprint_default, vendor_system_prop)
+set_prop(hal_fingerprint_default, vendor_system_prop)
