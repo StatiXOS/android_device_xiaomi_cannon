@@ -1,1 +1,2 @@
-# stub
+# Display node
+type vendor_sysfs_graphics, fs_type, sysfs_type;
