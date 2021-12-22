@@ -1,5 +1,9 @@
 persist.vendor.camera.mi.module.info                    u:object_r:vendor_oem_camera_prop:s0
 persist.vendor.camera.mi.dualcal.state                  u:object_r:vendor_oem_camera_prop:s0
+demo.hole						u:object_r:vendor_oem_camera_prop:s0
+demo.near						u:object_r:vendor_oem_camera_prop:s0
+demo.far						u:object_r:vendor_oem_camera_prop:s0
+demo.fb							u:object_r:vendor_oem_camera_prop:s0
 
 # Fingerprint
 fpc_kpi                                                 u:object_r:vendor_fp_prop:s0
