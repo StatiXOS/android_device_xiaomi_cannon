@@ -1,0 +1,1 @@
+allow nfc debugfs_ion:dir search;
