@@ -3,3 +3,6 @@ set_prop(mtk_hal_camera, vendor_oem_camera_prop)
 
 # Allow mtk_hal_camera to rw camera device
 allow mtk_hal_camera camera_device:chr_file rw_file_perms;
+
+# Allow mtk_camera_hal to find NN hwservice
+allow mtk_hal_camera hal_neuralnetworks_hwservice:hwservice_manager find;
