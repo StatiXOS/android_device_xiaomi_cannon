@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Copyright (C) 2021 StatiX
+    SPDX-License-Identifer: GPL-2.0-only
+-->
+<resources>
+    <integer name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
+</resources>
