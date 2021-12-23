@@ -13,7 +13,7 @@ allow hal_fingerprint_default property_socket:sock_file write;
 allow hal_fingerprint_default sysfs_boot_mode:file { open read };
 
 # Allow fingerprint HAL to setup fingerprint database files
-allow hal_fingerprint_default vendor_data_file:dir rw_file_perms;
+allow hal_fingerprint_default vendor_data_file:dir { rw_file_perms add_name create };
 allow hal_fingerprint_default vendor_data_file:file rw_file_perms;
 
 # Create fingerprint HAL entrypoint
