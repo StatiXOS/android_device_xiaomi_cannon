@@ -1,0 +1,8 @@
+// Copyright (C) 2021 StatiX
+// SPDX-License-Identifer: GPL-2.0-only
+
+runtime_resource_overlay {
+    name: "WifiResOverlay",
+    sdk_version: "current",
+    product_specific: true,
+}
