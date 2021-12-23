@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2021 StatiX
+    SPDX-License-Identifer: GPL-2.0-only
+-->
+<resources>
+    <!-- Boolean indicating whether the wifi chipset has 5GHz frequency band support -->
+    <bool name="config_wifi5ghzSupport">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool name="config_wifi_background_scan_support">true</bool>
+
+    <!-- True if the firmware supports connected MAC randomization -->
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+
+    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
+    <bool name="config_wifi_fast_bss_transition_enabled">true</bool>
+
+    <!-- True if the firmware supports p2p MAC randomization -->
+    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
+
+    <!-- Wifi driver supports Automatic channel selection (ACS) for softap -->
+    <bool name="config_wifi_softap_acs_supported">true</bool>
+
+    <!-- Wifi driver supports IEEE80211AC for softap -->
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
+
+    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
+    <bool name="config_wifi_softap_sae_supported">false</bool>
+</resources>
