@@ -300,7 +300,9 @@ PRODUCT_PACKAGES += \
 
 # RRO
 PRODUCT_PACKAGES += \
+    AospWifiResOverlay \
     WifiResOverlay
+
 
 # Radio
 PRODUCT_PACKAGES += \
