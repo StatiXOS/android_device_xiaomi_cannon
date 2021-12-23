@@ -298,6 +298,10 @@ PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
 
+# RRO
+PRODUCT_PACKAGES += \
+    WifiResOverlay
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0.vendor \
