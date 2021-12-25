@@ -11,6 +11,12 @@ persist.binder.check.size=200
 # Dex
 persist.bg.dexopt.enable=true
 dalvik.vm.dexopt.secondary=true
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=quicken
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
 
 # Display
 ro.vendor.colorpick_adjust=true
@@ -55,7 +61,6 @@ persist.vendor.quick.charge=1
 
 # VM
 persist.vm.stackdump.threshold=0
-ro.malloc.impl=jemalloc
 persist.sys.slab.threshold=256000,358400,460800,665600,819200
 persist.sys.minfree_def=73728,92160,110592,340000,510000,645120
 persist.sys.minfree_6g=73728,92160,110592,340000,1282868,1677312
@@ -77,5 +82,3 @@ mediatek.wlan.ctia=0
 wifi.tethering.interface=ap0
 wifi.direct.interface=p2p0
 
-# Zygote
-ro.zygote.preload.enable=0
