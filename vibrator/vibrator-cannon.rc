@@ -1,0 +1,8 @@
+service vendor.vibrator-cannon /vendor/bin/hw/android.hardware.vibrator-service.cannon
+    class hal
+    user system
+    group system
+
+on post-fs
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/f0_save
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/osc_save
