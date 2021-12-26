@@ -1,0 +1,38 @@
+// Copyright (C) 2022 StatiX
+// SPDX-License-Identifer: Apache-2.0
+
+cc_library_static {
+    name: "libvibratorcannonimpl",
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk_platform",
+    ],
+    export_include_dirs: ["include"],
+    srcs: [
+        "Vibrator.cpp",
+        "VibratorManager.cpp",
+    ],
+    visibility: [
+        ":__subpackages__",
+        "//hardware/interfaces/tests/extension/vibrator:__subpackages__",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.vibrator-service.cannon",
+    relative_install_path: "hw",
+    init_rc: ["vibrator-cannon.rc"],
+    vintf_fragments: ["vibrator-cannon.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk_platform",
+    ],
+    static_libs: [
+        "libvibratorcannonimpl",
+    ],
+    srcs: ["main.cpp"],
+}
