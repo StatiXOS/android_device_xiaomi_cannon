@@ -412,9 +412,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0.vendor \
-    android.hardware.vibrator@1.1.vendor \
-    android.hardware.vibrator@1.2.vendor
+    android.hardware.vibrator-service.cannon
 
 # WiFi
 PRODUCT_COPY_FILES += \
