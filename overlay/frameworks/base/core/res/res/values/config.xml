@@ -473,6 +473,9 @@
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
 
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+
     <!-- An array of device capabilities defined by GSMA SGP.22 v2.0, and their corresponding major
          version. -->
     <string-array translatable="false" name="config_telephonyEuiccDeviceCapabilities">
