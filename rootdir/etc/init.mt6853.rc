@@ -11,6 +11,7 @@ import /vendor/etc/init/hw/init.mal.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.stnfc.rc
 import /system/etc/init/hw/init.stnfc.rc
+import /vendor/etc/init/hw/init.dt2w.rc
 
 # init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import /vendor/etc/init/hw/init.modem.rc
@@ -1106,9 +1107,3 @@ service charger /system/bin/charger
     #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
-
-on property:persist.sys.cannon.dt2w=0
-    exec /system/bin/sendevent /dev/input/event2 0 1 4
-
-on property:persist.sys.cannon.dt2w=1
-    exec /system/bin/sendevent /dev/input/event2 0 1 5
