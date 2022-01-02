@@ -343,6 +343,7 @@ PRODUCT_PACKAGES += \
     teardown_loopback.sh \
     tp_data_collect.sh \
     tp_selftest.sh \
+    init.dt2w.sh \
     factory_init.connectivity.rc \
     factory_init.project.rc \
     factory_init.rc \
