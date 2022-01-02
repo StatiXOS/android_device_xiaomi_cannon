@@ -1,0 +1,7 @@
+# Disable DT2W
+on property:persist.sys.cannon.dt2w=0
+    exec /system/bin/sendevent /dev/input/event2 0 1 4
+
+# Enable DT2W
+on property:persist.sys.cannon.dt2w=1
+    exec /system/bin/sendevent /dev/input/event2 0 1 5

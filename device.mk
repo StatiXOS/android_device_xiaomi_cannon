@@ -354,6 +354,7 @@ PRODUCT_PACKAGES += \
     init.mt6853.usb.rc \
     init.project.rc \
     init.sensor_2_0.rc \
+    init.dt2w.rc \
     meta_init.connectivity.rc \
     meta_init.modem.rc \
     meta_init.project.rc \
