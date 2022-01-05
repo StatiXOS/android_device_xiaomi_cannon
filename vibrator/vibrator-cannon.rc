@@ -4,5 +4,7 @@ service vendor.vibrator-cannon /vendor/bin/hw/android.hardware.vibrator-service.
     group system input
 
 on post-fs
-    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/f0_save
-    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/osc_save
+    chown system system /sys/devices/platform/haptic_pwm/activate
+    chown system system /sys/devices/platform/haptic_pwm/duration
+    chown system system /sys/devices/platform/haptic_pwm/index
+    chown system system /sys/devices/platform/haptic_pwm/load_wavefile_ctrl
