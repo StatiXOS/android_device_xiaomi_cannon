@@ -7,3 +7,5 @@ genfscon sysfs /sys/devices/platform/battery/power_supply/battery/type          
 # Vibrator nodes
 genfscon sysfs /devices/platform/haptic_pwm/activate                                                       u:object_r:sysfs_haptics:s0
 genfscon sysfs /devices/platform/haptic_pwm/duration                                                       u:object_r:sysfs_haptics:s0
+genfscon sysfs /devices/platform/haptic_pwm/index                                                          u:object_r:sysfs_haptics:s0
+genfscon sysfs /devices/platform/haptic_pwm/load_wavefile_ctrl                                             u:object_r:sysfs_haptics:s0
