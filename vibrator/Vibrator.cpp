@@ -20,6 +20,23 @@ namespace vibrator {
 #define DEVICE_NODE "/sys/devices/platform/haptic_pwm/"
 #define ENABLE_NODE "activate"
 #define DURATION_NODE "duration"
+#define INDEX_NODE "index"
+
+// Define durations for waveforms
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_MS = 12;
+static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_MS = 10;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_MS = 12;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_MS = 12;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_MS = 130;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_MS = 15;
+static constexpr uint32_t WAVEFORM_POP_EFFECT_MS = 9;
+
+// Select waveform index from firmware through index
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_INDEX = 2;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_INDEX = 1;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_INDEX = 3;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX = 7;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_INDEX = 9;
 
 static constexpr int32_t kComposeDelayMaxMs = 1000;
 static constexpr int32_t kComposeSizeMax = 256;
@@ -38,15 +55,6 @@ template <typename T>
 static void set(const std::string& path, const T& value) {
     std::ofstream file(path);
     file << value;
-}
-
-template <typename T>
-static T get(const std::string& path, const T& def) {
-    std::ifstream file(path);
-    T result;
-
-    file >> result;
-    return file.fail() ? def : result;
 }
 
 ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
@@ -76,33 +84,73 @@ ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
 ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
                                      const std::shared_ptr<IVibratorCallback>& callback,
                                      int32_t* _aidl_return) {
+    ndk::ScopedAStatus status;
+    uint32_t timeMs;
+    uint32_t index;
+
     LOG(INFO) << "Vibrator perform";
 
-    if (effect != Effect::CLICK && effect != Effect::TICK) {
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
-    }
-    if (strength != EffectStrength::LIGHT && strength != EffectStrength::MEDIUM &&
-        strength != EffectStrength::STRONG) {
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+    switch (effect) {
+        case Effect::TEXTURE_TICK:
+            LOG(INFO) << "Vibrator effect set to TEXTURE_TICK";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_CLICK_EFFECT_INDEX);
+            timeMs = WAVEFORM_TEXTURE_TICK_EFFECT_MS;
+            break;
+        case Effect::TICK:
+            LOG(INFO) << "Vibrator effect set to TICK";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_TICK_EFFECT_INDEX);
+            timeMs = WAVEFORM_TICK_EFFECT_MS;
+            break;
+        case Effect::CLICK:
+            LOG(INFO) << "Vibrator effect set to CLICK";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_CLICK_EFFECT_INDEX);
+            timeMs = WAVEFORM_CLICK_EFFECT_MS;
+            break;
+        case Effect::HEAVY_CLICK:
+            LOG(INFO) << "Vibrator effect set to HEAVY_CLICK";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_HEAVY_CLICK_EFFECT_INDEX);
+            timeMs = WAVEFORM_HEAVY_CLICK_EFFECT_MS;
+            break;
+        case Effect::DOUBLE_CLICK:
+            LOG(INFO) << "Vibrator effect set to DOUBLE_CLICK";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX);
+            timeMs = WAVEFORM_DOUBLE_CLICK_EFFECT_MS;
+            break;
+        case Effect::THUD:
+            LOG(INFO) << "Vibrator effect set to THUD";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_THUD_EFFECT_INDEX);
+            timeMs = WAVEFORM_THUD_EFFECT_MS;
+            break;
+        case Effect::POP:
+            LOG(INFO) << "Vibrator effect set to POP";
+            set(DEVICE_NODE INDEX_NODE, WAVEFORM_TICK_EFFECT_INDEX);
+            timeMs = WAVEFORM_POP_EFFECT_MS;
+            break;
+        default:
+            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
     }
 
-    constexpr size_t kEffectMillis = 100;
-
-    if (callback != nullptr) {
-        std::thread([=] {
-            LOG(INFO) << "Starting perform on another thread";
-            usleep(kEffectMillis * 1000);
-            LOG(INFO) << "Notifying perform complete";
-            callback->onComplete();
-        }).detach();
+    status = on(timeMs, nullptr);
+    if (!status.isOk()) {
+        return status;
+    } else {
+        *_aidl_return = timeMs;
+        return ndk::ScopedAStatus::ok();
     }
-
-    *_aidl_return = kEffectMillis;
-    return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
-    *_aidl_return = {Effect::CLICK, Effect::TICK};
+ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect> *_aidl_return) {
+
+    *_aidl_return = {
+        Effect::TEXTURE_TICK,
+        Effect::TICK,
+        Effect::CLICK,
+        Effect::HEAVY_CLICK,
+        Effect::DOUBLE_CLICK,
+        Effect::THUD,
+        Effect::POP
+    };
+
     return ndk::ScopedAStatus::ok();
 }
 
