@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+    Copyright (C) 2022 StatiX
+    SPDX-License-Identifer: GPL-2.0-only
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.android.carrierconfig.cannon">
+    <overlay android:isStatic="true"
+             android:targetName="CarrierConfig"
+             android:targetPackage="com.android.carrierconfig" />
+    <application android:hasCode="false"
+                 android:label="CarrierConfigOverlay"/>
+</manifest>

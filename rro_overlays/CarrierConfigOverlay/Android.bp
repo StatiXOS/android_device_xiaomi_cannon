@@ -1,0 +1,9 @@
+// Copyright (C) 2022 StatiX
+// SPDX-License-Identifer: GPL-2.0-only
+
+runtime_resource_overlay {
+    name: "CarrierConfigOverlay",
+    sdk_version: "current",
+    product_specific: true,
+    aaptflags: ["--keep-raw-values"],
+}
