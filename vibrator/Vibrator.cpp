@@ -9,20 +9,56 @@
 #include "vibrator-impl/Vibrator.h"
 
 #include <android-base/logging.h>
-#include <fstream>
-#include <thread>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 namespace aidl {
 namespace android {
 namespace hardware {
 namespace vibrator {
 
-static constexpr char activate_node[] = "/sys/devices/platform/haptic_pwm/activate";
+static int write_node(const char *file, const char *value) {
+    int to_write = 0, written = -1, ret = 0;
+    int fd = -1;
 
-template <typename T>
-static void set(const std::string& path, const T& value) {
-    std::ofstream file(path);
-    file << value;
+    fd = TEMP_FAILURE_RETRY(open(file, O_WRONLY));
+    if (fd < 0) {
+        return -errno;
+    }
+
+    to_write = strlen(value) + 1;
+    written = TEMP_FAILURE_RETRY(write(fd, value, to_write));
+    if (written == -1) {
+        ret = -errno;
+    } else if (written != to_write) {
+        /* even though EAGAIN is an errno value that could be set
+           by write() in some cases, none of them apply here.  So, this return
+           value can be clearly identified when debugging and suggests the
+           caller that it may try to call vibrator_on() again */
+        ret = -EAGAIN;
+    } else {
+        ret = 0;
+    }
+
+    errno = 0;
+    close(fd);
+    fd = -1;
+
+    return ret;
+}
+
+static int send_node(unsigned int timeout_ms) {
+    char value[TIMEOUT_STR_LEN]; /* large enough for millions of years */
+
+    int bytes = snprintf(value, sizeof(value), "%u", timeout_ms);
+
+    if (bytes >= sizeof(value))
+        return -EINVAL;
+
+    return write_node(activate_node, value);
 }
 
 ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
@@ -33,47 +69,107 @@ ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
 
 ndk::ScopedAStatus Vibrator::off() {
     LOG(INFO) << "Vibrator off";
-    set(activate_node, 0);
+    send_node(0);
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
                                 const std::shared_ptr<IVibratorCallback>& callback) {
     LOG(INFO) << "Vibrator on for timeoutMs: " << timeoutMs;
-    set(activate_node, 1);
+    send_node(timeoutMs);
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
                                      const std::shared_ptr<IVibratorCallback>& callback,
                                      int32_t* _aidl_return) {
+    ndk::ScopedAStatus status;
+    uint32_t timeMs;
+    uint32_t index;
+
     LOG(INFO) << "Vibrator perform";
 
-    if (effect != Effect::CLICK && effect != Effect::TICK) {
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
-    }
-    if (strength != EffectStrength::LIGHT && strength != EffectStrength::MEDIUM &&
-        strength != EffectStrength::STRONG) {
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+    switch (effect) {
+        case Effect::TICK:
+            LOG(INFO) << "Vibrator effect set to TICK";
+            write_node(index_node, WAVEFORM_TICK_EFFECT_INDEX);
+            write_node(control_node, LOW_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_TICK_EFFECT_MS;
+            write_node(duration_node, WAVEFORM_TICK_EFFECT_MS);
+            break;
+        case Effect::TEXTURE_TICK:
+            LOG(INFO) << "Vibrator effect set to TEXTURE_TICK";
+            write_node(index_node, WAVEFORM_CLICK_EFFECT_INDEX);
+            write_node(control_node, LOW_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_TEXTURE_TICK_EFFECT_MS;
+            write_node(duration_node, WAVEFORM_TEXTURE_TICK_EFFECT_MS);
+            break;
+        case Effect::CLICK:
+            LOG(INFO) << "Vibrator effect set to CLICK";
+            write_node(index_node, WAVEFORM_CLICK_EFFECT_INDEX);
+            write_node(control_node, LOW_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_CLICK_EFFECT_MS;
+            write_node(duration_node, WAVEFORM_CLICK_EFFECT_MS);
+            break;
+        case Effect::HEAVY_CLICK:
+            LOG(INFO) << "Vibrator effect set to HEAVY_CLICK";
+            write_node(index_node, WAVEFORM_HEAVY_CLICK_EFFECT_INDEX);
+            write_node(control_node, MID_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_HEAVY_CLICK_EFFECT_MS;
+            write_node(duration_node, WAVEFORM_HEAVY_CLICK_EFFECT_MS);
+            break;
+        case Effect::DOUBLE_CLICK:
+            LOG(INFO) << "Vibrator effect set to DOUBLE_CLICK";
+            write_node(index_node, WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX);
+            write_node(control_node, MID_WAVEFORM_OFFSET);
+            write_node(duration_node, WAVEFORM_DOUBLE_CLICK_EFFECT_MS_PHASE_1);
+            send_node(WAVEFORM_DOUBLE_CLICK_EFFECT_MS_PHASE_1);
+            usleep(100);
+            send_node(0);
+            write_node(index_node, WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX);
+            write_node(control_node, MID_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_DOUBLE_CLICK_EFFECT_MS_PHASE_2;
+            write_node(duration_node, WAVEFORM_DOUBLE_CLICK_EFFECT_MS_PHASE_2);
+            break;
+        case Effect::THUD:
+            LOG(INFO) << "Vibrator effect set to THUD";
+            write_node(index_node, WAVEFORM_THUD_EFFECT_INDEX);
+            write_node(control_node, HIGH_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_THUD_EFFECT_MS;
+            write_node(duration_node, WAVEFORM_THUD_EFFECT_MS);
+            break;
+        case Effect::POP:
+            LOG(INFO) << "Vibrator effect set to POP";
+            write_node(index_node, WAVEFORM_TICK_EFFECT_INDEX);
+            write_node(control_node, LOW_WAVEFORM_OFFSET);
+            timeMs = WAVEFORM_POP_EFFECT_MS;
+            write_node(duration_node, WAVEFORM_POP_EFFECT_MS);
+            break;
+        default:
+            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
     }
 
-    constexpr size_t kEffectMillis = 100;
-
-    if (callback != nullptr) {
-        std::thread([=] {
-            LOG(INFO) << "Starting perform on another thread";
-            usleep(kEffectMillis * 1000);
-            LOG(INFO) << "Notifying perform complete";
-            callback->onComplete();
-        }).detach();
+    status = on(timeMs, nullptr);
+    if (!status.isOk()) {
+        return status;
+    } else {
+        *_aidl_return = timeMs;
+        return ndk::ScopedAStatus::ok();
     }
-
-    *_aidl_return = kEffectMillis;
-    return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
-    *_aidl_return = {Effect::CLICK, Effect::TICK};
+ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect> *_aidl_return) {
+
+    *_aidl_return = {
+        Effect::TICK,
+        Effect::TEXTURE_TICK,
+        Effect::CLICK,
+        Effect::HEAVY_CLICK,
+        Effect::DOUBLE_CLICK,
+        Effect::THUD,
+        Effect::POP
+    };
+
     return ndk::ScopedAStatus::ok();
 }
 
