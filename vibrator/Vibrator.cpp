@@ -9,12 +9,17 @@
 #include "vibrator-impl/Vibrator.h"
 
 #include <android-base/logging.h>
+#include <fstream>
 #include <thread>
 
 namespace aidl {
 namespace android {
 namespace hardware {
 namespace vibrator {
+
+#define DEVICE_NODE "/sys/devices/platform/haptic_pwm/"
+#define ENABLE_NODE "activate"
+#define DURATION_NODE "duration"
 
 static constexpr int32_t kComposeDelayMaxMs = 1000;
 static constexpr int32_t kComposeSizeMax = 256;
@@ -29,6 +34,21 @@ static constexpr float PWLE_FREQUENCY_RESOLUTION_HZ = 1.0;
 static constexpr float PWLE_FREQUENCY_MIN_HZ = 140.0;
 static constexpr float PWLE_FREQUENCY_MAX_HZ = 160.0;
 
+template <typename T>
+static void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
+
+template <typename T>
+static T get(const std::string& path, const T& def) {
+    std::ifstream file(path);
+    T result;
+
+    file >> result;
+    return file.fail() ? def : result;
+}
+
 ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
     LOG(INFO) << "Vibrator reporting capabilities";
     *_aidl_return = IVibrator::CAP_ON_CALLBACK | IVibrator::CAP_PERFORM_CALLBACK |
@@ -42,22 +62,14 @@ ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
 
 ndk::ScopedAStatus Vibrator::off() {
     LOG(INFO) << "Vibrator off";
+    set(DEVICE_NODE ENABLE_NODE, 0);
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
                                 const std::shared_ptr<IVibratorCallback>& callback) {
     LOG(INFO) << "Vibrator on for timeoutMs: " << timeoutMs;
-    if (callback != nullptr) {
-        std::thread([=] {
-            LOG(INFO) << "Starting on on another thread";
-            usleep(timeoutMs * 1000);
-            LOG(INFO) << "Notifying on complete";
-            if (!callback->onComplete().isOk()) {
-                LOG(ERROR) << "Failed to call onComplete";
-            }
-        }).detach();
-    }
+    set(DEVICE_NODE ENABLE_NODE, 1);
     return ndk::ScopedAStatus::ok();
 }
 
