@@ -21,6 +21,14 @@ namespace vibrator {
 #define ENABLE_NODE "activate"
 #define DURATION_NODE "duration"
 
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_MS = 9;
+static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_MS = 8;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_MS = 9;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_MS = 9;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_MS = 130;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_MS = 11;
+static constexpr uint32_t WAVEFORM_POP_EFFECT_MS = 7;
+
 static constexpr int32_t kComposeDelayMaxMs = 1000;
 static constexpr int32_t kComposeSizeMax = 256;
 static constexpr int32_t kComposePwleSizeMax = 127;
@@ -76,33 +84,70 @@ ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
 ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
                                      const std::shared_ptr<IVibratorCallback>& callback,
                                      int32_t* _aidl_return) {
+    ndk::ScopedAStatus status;
+    uint32_t timeMS;
+
     LOG(INFO) << "Vibrator perform";
 
-    if (effect != Effect::CLICK && effect != Effect::TICK) {
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+    status = getEffects(effect, &timeMS);
+    if (!status.isOk()) {
+        return status;
     }
-    if (strength != EffectStrength::LIGHT && strength != EffectStrength::MEDIUM &&
-        strength != EffectStrength::STRONG) {
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
-    }
-
-    constexpr size_t kEffectMillis = 100;
-
-    if (callback != nullptr) {
-        std::thread([=] {
-            LOG(INFO) << "Starting perform on another thread";
-            usleep(kEffectMillis * 1000);
-            LOG(INFO) << "Notifying perform complete";
-            callback->onComplete();
-        }).detach();
-    }
-
-    *_aidl_return = kEffectMillis;
+    
     return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
-    *_aidl_return = {Effect::CLICK, Effect::TICK};
+ndk::ScopedAStatus Vibrator::getEffects(Effect effect,
+                                        uint32_t timeMs) {
+
+    switch (effect) {
+        case Effect::TEXTURE_TICK:
+            timeMs = WAVEFORM_TEXTURE_TICK_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        case Effect::TICK:
+            timeMs = WAVEFORM_TICK_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        case Effect::CLICK:
+            timeMs = WAVEFORM_CLICK_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        case Effect::HEAVY_CLICK:
+            timeMs = WAVEFORM_HEAVY_CLICK_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        case Effect::DOUBLE_CLICK:
+            timeMs = WAVEFORM_DOUBLE_CLICK_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        case Effect::THUD:
+            timeMs = WAVEFORM_THUD_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        case Effect::POP:
+            timeMs = WAVEFORM_POP_EFFECT_MS;
+            set(DEVICE_NODE DURATION_NODE, timeMS);
+            break;
+        default:
+            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+
+    return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect> *_aidl_return) {
+
+    *_aidl_return = {
+        Effect::TEXTURE_TICK,
+        Effect::TICK,
+        Effect::CLICK,
+        Effect::HEAVY_CLICK,
+        Effect::DOUBLE_CLICK,
+        Effect::POP,
+        Effect::THUD
+    };
+
     return ndk::ScopedAStatus::ok();
 }
 
