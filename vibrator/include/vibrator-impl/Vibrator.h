@@ -23,6 +23,29 @@ namespace android {
 namespace hardware {
 namespace vibrator {
 
+// Driver Nodes
+static constexpr char activate_node[] = "/sys/devices/platform/haptic_pwm/activate";
+static constexpr char duration_node[] = "/sys/devices/platform/haptic_pwm/duration";
+static constexpr char hwen_node[] = "/sys/devices/platform/haptic_pwm/hwen";
+static constexpr char index_node[] = "/sys/devices/platform/haptic_pwm/index";
+
+// Define durations for waveforms
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_MS = 25;
+static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_MS = 20;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_MS = 15;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_MS = 30;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_MS = 60;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_MS = 35;
+static constexpr uint32_t WAVEFORM_POP_EFFECT_MS = 15;
+
+// Select waveform index from firmware through index list
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_INDEX = 2;
+static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_INDEX = 4;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_INDEX = 1;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_INDEX = 5;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX = 6;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_INDEX = 3;
+
 class Vibrator : public BnVibrator {
     ndk::ScopedAStatus getCapabilities(int32_t* _aidl_return) override;
     ndk::ScopedAStatus off() override;
@@ -55,6 +78,8 @@ class Vibrator : public BnVibrator {
     ndk::ScopedAStatus composePwle(const std::vector<PrimitivePwle> &composite,
                                    const std::shared_ptr<IVibratorCallback> &callback) override;
 
+  private:
+    ndk::ScopedAStatus mapNodes(uint32_t timeMs, uint32_t index);
 };
 
 }  // namespace vibrator
