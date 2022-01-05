@@ -3,3 +3,7 @@ genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/max_brightness    
 
 # Battery info
 genfscon sysfs /sys/devices/platform/battery/power_supply/battery/type                                     u:object_r:sysfs_batteryinfo:s0
+
+# Vibrator nodes
+genfscon sysfs /devices/platform/haptic_pwm/activate                                                       u:object_r:sysfs_haptics:s0
+genfscon sysfs /devices/platform/haptic_pwm/duration                                                       u:object_r:sysfs_haptics:s0
