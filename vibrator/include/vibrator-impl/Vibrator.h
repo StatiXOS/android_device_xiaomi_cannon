@@ -23,6 +23,34 @@ namespace android {
 namespace hardware {
 namespace vibrator {
 
+// Driver Nodes
+static constexpr char activate_node[] = "/sys/devices/platform/haptic_pwm/activate";
+static constexpr char duration_node[] = "/sys/devices/platform/haptic_pwm/duration";
+static constexpr char hwen_node[] = "/sys/devices/platform/haptic_pwm/hwen";
+static constexpr char index_node[] = "/sys/devices/platform/haptic_pwm/index";
+static constexpr char control_node[] = "/sys/devices/platform/haptic_pwm/load_wavefile_ctrl";
+
+// Define durations for waveforms
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_MS = 14;
+static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_MS = 10;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_MS = 12;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_MS = 12;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_MS = 80;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_MS = 15;
+static constexpr uint32_t WAVEFORM_POP_EFFECT_MS = 9;
+
+// Select waveform index from firmware through index list
+static constexpr uint32_t WAVEFORM_TICK_EFFECT_INDEX = 2;
+static constexpr uint32_t WAVEFORM_CLICK_EFFECT_INDEX = 1;
+static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_INDEX = 3;
+static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX = 7;
+static constexpr uint32_t WAVEFORM_THUD_EFFECT_INDEX = 9;
+
+// Waveform control
+static constexpr uint32_t LOW_WAVEFORM_OFFSET = 0;
+static constexpr uint32_t MID_WAVEFORM_OFFSET = 1;
+static constexpr uint32_t HIGH_WAVEFORM_OFFSET = 2;
+
 class Vibrator : public BnVibrator {
     ndk::ScopedAStatus getCapabilities(int32_t* _aidl_return) override;
     ndk::ScopedAStatus off() override;
