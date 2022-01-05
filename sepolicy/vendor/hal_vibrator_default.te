@@ -1,0 +1,2 @@
+# Allow vibrator HAL to RW haptic nodes
+allow hal_vibrator_default sysfs_haptics:file rw_file_perms;
