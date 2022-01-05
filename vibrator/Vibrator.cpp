@@ -16,6 +16,10 @@ namespace android {
 namespace hardware {
 namespace vibrator {
 
+#define DEVICE_NODE "/sys/devices/platform/haptic_pwm/"
+#define ENABLE_NODE "activate"
+#define DURATION_NODE "duration"
+
 static constexpr int32_t kComposeDelayMaxMs = 1000;
 static constexpr int32_t kComposeSizeMax = 256;
 static constexpr int32_t kComposePwleSizeMax = 127;
@@ -28,6 +32,17 @@ static constexpr float PWLE_LEVEL_MAX = 0.98256;
 static constexpr float PWLE_FREQUENCY_RESOLUTION_HZ = 1.0;
 static constexpr float PWLE_FREQUENCY_MIN_HZ = 140.0;
 static constexpr float PWLE_FREQUENCY_MAX_HZ = 160.0;
+
+static void write_to_node(std::string path, std::string value) {
+    std::ofstream file(path);
+
+    if (!file.is_open()) {
+        ALOGW("failed to write %s to %s", value.c_str(), path.c_str());
+        return;
+    }
+
+    file << value;
+}
 
 ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
     LOG(INFO) << "Vibrator reporting capabilities";
@@ -42,12 +57,14 @@ ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
 
 ndk::ScopedAStatus Vibrator::off() {
     LOG(INFO) << "Vibrator off";
+    write_to_node(DEVICE_NODE ENABLE_NODE, 0);
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
                                 const std::shared_ptr<IVibratorCallback>& callback) {
     LOG(INFO) << "Vibrator on for timeoutMs: " << timeoutMs;
+    write_to_node(DEVICE_NODE ENABLE_NODE, 1);
     if (callback != nullptr) {
         std::thread([=] {
             LOG(INFO) << "Starting on on another thread";
