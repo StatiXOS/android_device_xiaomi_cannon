@@ -305,6 +305,7 @@ PRODUCT_PACKAGES += \
 # RRO
 PRODUCT_PACKAGES += \
     AospWifiResOverlay \
+    CarrierConfigOverlay \
     TetheringResOverlay \
     WifiResOverlay
 
