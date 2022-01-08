@@ -31,4 +31,8 @@
 
     <!-- Camera 1 is the front camera on cannon -->
     <string translatable="false" name="config_protectedCameraId">1</string>
+
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+     vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
 </resources>
