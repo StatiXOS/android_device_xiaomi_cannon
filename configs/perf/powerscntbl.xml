@@ -21,7 +21,7 @@
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
         <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
         <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="100"></data>
-        <data cmd="PERF_RES_PERF_TASK_TURBO" param1="15"></data>
+        <data cmd="PERF_RES_PERF_TASK_TURBO" param1="30"></data>
     </scenario>
     <scenario powerhint="MTKPOWER_HINT_EXT_LAUNCH">
         <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="15"></data>
@@ -43,7 +43,7 @@
         <data cmd="PERF_RES_POWER_HINT_HOLD_TIME" param1="6000"></data>
         <data cmd="PERF_RES_POWER_HINT_EXT_HINT" param1="30"></data>
         <data cmd="PERF_RES_POWER_HINT_EXT_HINT_HOLD_TIME" param1="35000"></data>
-        <data cmd="PERF_RES_PERF_TASK_TURBO" param1="15"></data>
+        <data cmd="PERF_RES_PERF_TASK_TURBO" param1="30"></data>
     </scenario>
     <scenario powerhint="MTKPOWER_HINT_APP_ROTATE">
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>

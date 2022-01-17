@@ -136,7 +136,7 @@
     <CMD name="PERF_RES_PERF_TASK_TURBO" id="0x0300c000">
         <Entry path="/sys/module/task_turbo/parameters/feats"></Entry>
         <Compare>more</Compare>
-        <MaxValue>15</MaxValue>
+        <MaxValue>30</MaxValue>
         <MinValue>0</MinValue>
         <DefaultValue>0</DefaultValue>
     </CMD>
