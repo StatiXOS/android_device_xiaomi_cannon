@@ -26,6 +26,7 @@ persist.audio.button_jack.switch=0
 ro.vendor.audio.voice.volume.boost=none
 vendor.audio.adm.buffering.ms=3
 ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
 
 # Bluetooth
 vendor.bluetooth.ldac.abr=true
