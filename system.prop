@@ -9,6 +9,7 @@ persist.binder.check.enable=true
 persist.binder.check.size=200
 
 # Dex
+dalvik.vm.dex2oat64.enabled=true
 persist.bg.dexopt.enable=true
 dalvik.vm.dexopt.secondary=true
 pm.dexopt.install=speed-profile
