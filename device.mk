@@ -152,6 +152,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
 
+# ContextHub HAL
+PRODUCT_PACKAGES += \
+    android.hardware.contexthub@1.2-service.generic
+
+PRODUCT_PACKAGES += \
+    chre \
+    chre_client \
+    chre_api
+
+PRODUCT_PACKAGES_DEBUG += \
+    chre_test_client \
+    chre_power_test_client \
+    audio_stress_test
+
 # Dalvik VM Configuration
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
