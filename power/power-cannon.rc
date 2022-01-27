@@ -1,0 +1,4 @@
+service vendor.power-cannon /vendor/bin/hw/android.hardware.power-service.cannon
+    class hal
+    user nobody
+    group system
