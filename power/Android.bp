@@ -1,0 +1,20 @@
+// Copyright (C) 2020 The Android Open Source Project
+// Copyright (C) 2022 StatiX
+// SPDX-License-Identifer: Apache-2.0
+
+cc_binary {
+    name: "android.hardware.power-service.cannon",
+    relative_install_path: "hw",
+    init_rc: ["power-cannon.rc"],
+    vintf_fragments: ["power-cannon.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.power-V2-ndk_platform",
+    ],
+    srcs: [
+        "main.cpp",
+        "Power.cpp",
+    ],
+}
