@@ -13,8 +13,12 @@ cc_binary {
         "libbinder_ndk",
         "android.hardware.power-V2-ndk_platform",
     ],
+    static_libs: [
+        "libjsoncpp",
+    ],
     srcs: [
         "main.cpp",
         "Power.cpp",
+        "ParsePowerHint.cpp",
     ],
 }
