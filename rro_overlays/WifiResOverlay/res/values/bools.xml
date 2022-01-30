@@ -27,4 +27,10 @@
 
     <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
     <bool name="config_wifi_softap_sae_supported">false</bool>
+
+    <!-- Wifi driver supports 2.4GHz band for softap when chip support 2.4GHz -->
+    <bool name="config_wifiSoftap24ghzSupported">true</bool>
+
+    <!-- Wifi driver supports 5GHz band for softap when chip support 5GHz -->
+    <bool name="config_wifiSoftap5ghzSupported">true</bool>
 </resources>
