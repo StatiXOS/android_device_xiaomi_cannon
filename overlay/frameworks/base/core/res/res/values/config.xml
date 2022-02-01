@@ -26,12 +26,33 @@
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent). -->
-    <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
 
     <!-- Display cutout configuration -->
     <string name="config_mainBuiltInDisplayCutout">
-        M -939,0 H -1080 V 99 H -939 V 0 Z@right
+        M -939,0
+        H -1080
+        V 99
+        H -939
+        V 0
+        Z
+        @right
     </string>
+
+    <!-- Like config_mainBuiltInDisplayCutout, but this path is used to report the
+         one single bounding rect per device edge to the app via
+         {@link DisplayCutout#getBoundingRect}. Note that this path should try to match the visual
+         appearance of the cutout as much as possible, and may be smaller than
+         config_mainBuiltInDisplayCutout
+         -->
+    <string name="config_mainBuiltInDisplayCutoutRectApproximation">
+        M 0,0
+        H 142
+        V 111
+        H 0
+        Z
+        @left
+     </string>
 
     <!-- boolean indicating whether the WiFi chipset has 5GHz band support.
          Note: This config is replacing the config_wifi_dual_band_support
