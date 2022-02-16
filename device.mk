@@ -259,9 +259,7 @@ PRODUCT_PACKAGES += \
 # Mediatek Framework
 PRODUCT_BOOT_JARS += \
     mediatek-common \
-    mediatek-framework-net \
-    mediatek-framework \
-    mediatek-services
+    mediatek-framework
 
 # MNLD
 PRODUCT_PACKAGES += \
@@ -335,8 +333,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     mediatek-ims-base \
     mediatek-ims-common \
-    mediatek-ims-extension-plugin \
-    mediatek-ims-legacy \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common
