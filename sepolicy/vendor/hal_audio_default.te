@@ -23,6 +23,7 @@ get_prop(hal_audio_default, audiohal_prop)
 get_prop(hal_audio_default, mtk_default_prop)
 get_prop(hal_audio_default, tel_switch_prop)
 get_prop(hal_audio_default, vendor_audio_prop)
+get_prop(hal_audio_default, wmt_prop)
 set_prop(hal_audio_default, vendor_audio_prop)
 
 allow hal_audio_default debugfs_ion:dir search;
