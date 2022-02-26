@@ -1992,7 +1992,6 @@ vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 # Sensors
 vendor/bin/hw/android.hardware.sensors@2.0-service-mediatek
 vendor/etc/init/android.hardware.sensors@2.0-service-mediatek.rc
-vendor/etc/sensors/hals.conf
 vendor/lib/hw/sensors.touch.so
 vendor/lib/libssccalapi.so
 vendor/lib64/hw/sensors.mt6853.so
