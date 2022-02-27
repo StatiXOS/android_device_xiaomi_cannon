@@ -1861,12 +1861,6 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
 # NFC
-product/lib/vendor.nxp.hardware.nfc@1.0.so
-product/lib/vendor.nxp.hardware.nfc@1.1.so
-product/lib64/vendor.nxp.hardware.nfc@1.0.so
-product/lib64/vendor.nxp.hardware.nfc@1.1.so
-vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
-vendor/etc/init/vendor.nxp.hardware.nfc@1.2-service.rc
 vendor/etc/sn100u_bootup.pnscr
 vendor/etc/sn100u_ese_disableIso.pnscr
 vendor/etc/sn100u_ese_disableIsoRead.pnscr
@@ -1887,19 +1881,8 @@ vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp-pnscr.conf
 vendor/etc/libnfc-nxp.conf
 vendor/etc/libnfc-nxp_RF.conf
-vendor/etc/permissions/com.android.nfc_extras.xml
-vendor/etc/permissions/com.nxp.mifare.xml
-vendor/etc/permissions/com.nxp.sems.xml
 vendor/etc/sn100u_nfcon.pnscr
 -vendor/framework/com.nxp.sems.jar
-vendor/lib/ls_client.so
-vendor/lib/nfc_nci.nqx.default.hw.so
-vendor/lib/secure_element-impl.so
-vendor/lib64/ls_client.so
-vendor/lib64/nfc_nci.nqx.default.hw.so
-vendor/lib64/secure_element-impl.so
-vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
-vendor/lib64/vendor.nxp.hardware.nfc@1.1.so
 
 # Neural-networks
 system_ext/lib/libarmnn_ndk.mtk.so
