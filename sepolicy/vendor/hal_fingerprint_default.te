@@ -19,6 +19,9 @@ allow hal_fingerprint_default vendor_data_file:file create_file_perms;
 # Create fingerprint HAL entrypoint
 allow hal_fingerprint_default hal_fingerprint_default_exec:file entrypoint;
 
+# Allow fingerprint HAL to read and write into chr_file
+allow hal_fingerprint_default fp_device:chr_file rw_file_perms;
+
 # Get and Set fingerprint properties
 get_prop(hal_fingerprint_default, vendor_system_prop)
 set_prop(hal_fingerprint_default, vendor_system_prop)
