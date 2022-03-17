@@ -7,7 +7,7 @@
  */
 
 android_app {
-    name: "DT2W-Service-Cannon",
+    name: "CannonExtensions",
 
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
@@ -21,13 +21,13 @@ android_app {
     },
 
     required: [
-        "privapp-permissions_org.lineageos.dt2w.cannon"
+        "privapp-permissions.cannon"
     ]
 }
 
 prebuilt_etc {
-    name: "privapp-permissions_org.lineageos.dt2w.cannon",
+    name: "privapp-permissions.cannon",
     sub_dir: "permissions",
-    src: "privapp-permissions_org.lineageos.dt2w.cannon.xml",
+    src: "privapp-permissions.cannon.xml",
     filename_from_src: true,
 }

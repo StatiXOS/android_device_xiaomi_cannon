@@ -1,4 +1,4 @@
-package org.lineageos.dt2w.cannon;
+package com.android.cannonextensions;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
