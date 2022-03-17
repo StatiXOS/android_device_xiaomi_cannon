@@ -1,4 +1,4 @@
-package org.lineageos.dt2w.cannon;
+package com.android.cannonextensions;
 
 import android.app.Service;
 import android.content.ContentResolver;
