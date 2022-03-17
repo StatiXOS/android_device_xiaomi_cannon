@@ -164,10 +164,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
     android.hardware.drm@1.4.vendor
 
-# DT2W
-PRODUCT_PACKAGES += \
-    DT2W-Service-Cannon
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
@@ -179,6 +175,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libdrm.vendor \
     libfmq.vendor
+
+# Extensions
+PRODUCT_PACKAGES += \
+    CannonExtensions
 
 # Fingerprint
 PRODUCT_PACKAGES += \
