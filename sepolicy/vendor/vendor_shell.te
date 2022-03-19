@@ -1,0 +1,3 @@
+# Display panel color
+get_prop(vendor_shell, vendor_display_prop)
+set_prop(vendor_shell, vendor_display_prop)
