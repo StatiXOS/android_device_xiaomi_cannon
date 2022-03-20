@@ -315,6 +315,11 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1.vendor \
     android.hardware.power@1.3.vendor
 
+# Props
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/props/device_CN.prop:$(TARGET_COPY_OUT_VENDOR)/etc/device_CN.prop \
+    $(LOCAL_PATH)/configs/props/device_GL.prop:$(TARGET_COPY_OUT_VENDOR)/etc/device_GL.prop
+
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \

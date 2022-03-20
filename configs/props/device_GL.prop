@@ -1,0 +1,26 @@
+#
+# Cannong specific props
+#
+ro.build.product=cannong
+ro.product.board=cannong
+ro.product.bootimage.device=cannong
+ro.product.bootimage.name=cannong
+ro.product.device=cannong
+ro.product.name=cannong
+ro.product.odm.device=cannong
+ro.product.odm.name=cannong
+ro.product.product.device=cannong
+ro.product.product.name=cannong
+ro.product.system.device=cannong
+ro.product.system.name=cannong
+ro.product.system_ext.device=cannong
+ro.product.system_ext.name=cannong
+ro.product.vendor.device=cannong
+ro.product.vendor.name=cannong
+ro.product.bootimage.model=Redmi Note 9T
+ro.product.model=Redmi Note 9T
+ro.product.odm.model=Redmi Note 9T
+ro.product.product.model=Redmi Note 9T
+ro.product.system.model=Redmi Note 9T
+ro.product.system_ext.model=Redmi Note 9T
+ro.product.vendor.model=Redmi Note 9T

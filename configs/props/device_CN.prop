@@ -1,0 +1,26 @@
+#
+# Cannon specific props
+#
+ro.build.product=cannon
+ro.product.board=cannon
+ro.product.bootimage.device=cannon
+ro.product.bootimage.name=cannon
+ro.product.device=cannon
+ro.product.name=cannon
+ro.product.odm.device=cannon
+ro.product.odm.name=cannon
+ro.product.product.device=cannon
+ro.product.product.name=cannon
+ro.product.system.device=cannon
+ro.product.system.name=cannon
+ro.product.system_ext.device=cannon
+ro.product.system_ext.name=cannon
+ro.product.vendor.device=cannon
+ro.product.vendor.name=cannon
+ro.product.bootimage.model=Redmi Note 9 5G
+ro.product.model=Redmi Note 9 5G
+ro.product.odm.model=Redmi Note 9 5G
+ro.product.product.model=Redmi Note 9 5G
+ro.product.system.model=Redmi Note 9 5G
+ro.product.system_ext.model=Redmi Note 9 5G
+ro.product.vendor.model=Redmi Note 9 5G
