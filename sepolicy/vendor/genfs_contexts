@@ -1,5 +1,6 @@
-# Display brightness
+# Display
 genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/max_brightness                               u:object_r:sysfs_leds:s0
+genfscon sysfs /class/drm/card0-DSI-1/panel_event                                                          u:object_r:vendor_sysfs_graphics:s0
 
 # Battery info
 genfscon sysfs /sys/devices/platform/battery/power_supply/battery/type                                     u:object_r:sysfs_batteryinfo:s0
