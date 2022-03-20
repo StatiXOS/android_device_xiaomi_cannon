@@ -479,3 +479,5 @@ ro.vendor.wlan.gen=gen4m
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
 ro.zram.periodic_wb_delay_hours=24
+
+import /vendor/etc/device_${ro.boot.hwc}.prop
