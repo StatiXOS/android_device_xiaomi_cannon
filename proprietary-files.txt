@@ -1643,8 +1643,6 @@ vendor/etc/init/networksetting.rc
 vendor/etc/init_panel_info.sh
 vendor/etc/mpe.conf
 vendor/etc/nhw
-vendor/etc/NOTICE_GPL.html.gz
-vendor/etc/partition_permission.sh
 vendor/etc/pm_test_item_config.xml
 vendor/etc/qt.cfg
 vendor/etc/slp_conf
@@ -1652,7 +1650,6 @@ vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
 vendor/etc/spn-conf-op09.xml
 vendor/etc/task_profiles.json
-vendor/etc/throttle.sh
 vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 vendor/etc/vendor-apns-conf.xml
 vendor/etc/virtual-spn-conf-by-efgid1.xml
