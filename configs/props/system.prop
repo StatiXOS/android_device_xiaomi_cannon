@@ -49,6 +49,8 @@ ro.vendor.radio.5g=3
 ro.vendor.radio.features_common=2
 persist.vendor.radio.dynamic_sar=1
 persist.radio.apm_sim_not_pwdn=1
+ro.vendor.mtk_cta_set=1
+ro.vendor.mtk_telephony_add_on_policy=0
 
 # IMS 
 persist.dbg.volte_avail_ovr=1
