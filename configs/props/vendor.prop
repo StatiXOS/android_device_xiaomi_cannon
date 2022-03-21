@@ -119,10 +119,6 @@ sys.haptic.down.normal=30
 sys.haptic.down.weak=10
 sys.haptic.runin=13
 
-# Hwui
-debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
-
 # Incremental
 ro.incremental.enable=yes
 
