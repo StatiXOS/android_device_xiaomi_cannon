@@ -202,7 +202,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
-    android.hidl.memory.block@1.0
+    android.hidl.memory.block@1.0 \
+    android.hidl.allocator@1.0.vendor:64
 
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
