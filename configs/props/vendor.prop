@@ -113,12 +113,6 @@ ro.vendor.mtk_agps_app=1
 ro.vendor.mtk_gps_support=1
 ro.vendor.mtk_fd_support=1
 
-# Haptics
-sys.haptic.down.strong=50
-sys.haptic.down.normal=30
-sys.haptic.down.weak=10
-sys.haptic.runin=13
-
 # Incremental
 ro.incremental.enable=yes
 
