@@ -116,6 +116,9 @@ ro.vendor.mtk_fd_support=1
 # Incremental
 ro.incremental.enable=yes
 
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
 # Mediatek
 ro.vendor.mediatek.platform=MT6853
 ro.vendor.have_aeev_feature=1
