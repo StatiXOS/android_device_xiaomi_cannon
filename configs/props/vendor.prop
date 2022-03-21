@@ -116,6 +116,16 @@ ro.vendor.mtk_fd_support=1
 # Incremental
 ro.incremental.enable=yes
 
+# LMKD
+ro.lmk.critical_upgrade=true
+ro.lmk.upgrade_pressure=60
+ro.lmk.downgrade_pressure=80
+ro.lmk.use_minfree_levels=true
+ro.lmk.kill_heaviest_task=true
+ro.lmk.extra_medium=400
+ro.lmk.extra_critical=400
+ro.lmk.low=1000
+
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
