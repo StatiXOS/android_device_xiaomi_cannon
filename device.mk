@@ -112,14 +112,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0.vendor \
     android.hardware.audio.service \
-    android.hardware.audio@6.0-impl \
+    android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.common-util.vendor \
     android.hardware.audio.common@6.0-util.vendor \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.soundtrigger@2.3.vendor \
-    android.hardware.soundtrigger@2.0-core \
-    android.hardware.soundtrigger@2.3-impl
+    android.hardware.soundtrigger@2.0-core:32 \
+    android.hardware.soundtrigger@2.3-impl:32
 
 PRODUCT_PACKAGES += \
     libaudiopreprocessing \
