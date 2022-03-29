@@ -1,0 +1,2 @@
+# Allow MTK PQ HAL to RW display panel nodes
+allow mtk_hal_pq vendor_sysfs_graphics:file rw_file_perms;
