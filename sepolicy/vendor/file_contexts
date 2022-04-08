@@ -5,9 +5,12 @@
 /dev/camera_eeprom3                                u:object_r:camera_device:s0
 
 # Fingerprint
-/data/gf_data(/.*)?                    u:object_r:fp_data_file:s0
-/dev/goodix_fp                         u:object_r:fp_device:s0
+/data/gf_data(/.*)?                                u:object_r:fp_data_file:s0
+/dev/goodix_fp                                     u:object_r:fp_device:s0
 /vendor/bin/hw/mfp-daemon			   u:object_r:hal_fingerprint_default_exec:s0
+
+# Secure Element
+/vendor/bin/hw/vendor\.microtrust\.hardware\.se@1\.0-service   u:object_r:hal_secure_element_default_exec:s0
 
 # Vibrator
 /vendor/bin/hw/android\.hardware\.vibrator-service\.cannon     u:object_r:hal_vibrator_default_exec:s0
