@@ -22,9 +22,9 @@ PRODUCT_BRAND := xiaomi
 PRODUCT_MODEL := Redmi Note 9T
 PRODUCT_MANUFACTURER := Xiaomi
 
-BUILD_FINGERPRINT := "Redmi/cannong_global/cannong:11/RP1A.200720.011/V12.5.7.0.RJEMIXM:user/release-keys"
+BUILD_FINGERPRINT := "Redmi/cannong_global/cannong:11/RP1A.200720.011/V12.5.8.0.RJEMIXM:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="cannong-user 11 RP1A.200720.011 V12.5.7.0.RJEMIXM release-keys"
+    PRIVATE_BUILD_DESC="cannong-user 11 RP1A.200720.011 V12.5.8.0.RJEMIXM release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
