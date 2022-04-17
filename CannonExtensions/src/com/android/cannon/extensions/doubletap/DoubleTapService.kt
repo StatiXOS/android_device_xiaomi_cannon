@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2022 StatiX
+ * SPDX-License-Identifier: GPL-2.0-only
+ */
+
 package com.android.cannonextensions
 
 import android.app.Service
@@ -13,10 +18,10 @@ import android.os.SystemProperties
 import android.os.UserHandle
 import android.provider.Settings.Secure
 
-class DT2WServiceCannon : Service() {
-    private var mContext: Context
-    private var mHandler: Handler
-    private var mCustomSettingsObserver: CustomSettingsObserver
+class DoubleTapService : Service() {
+    private lateinit var mContext: Context
+    private lateinit var mHandler: Handler
+    private lateinit var mCustomSettingsObserver: CustomSettingsObserver
     
     override fun onBind(intent: Intent?): IBinder? {
         return null
@@ -24,6 +29,7 @@ class DT2WServiceCannon : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
+        DoubleTapUtils.stopService(context)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startid: Int): Int {
@@ -53,9 +59,5 @@ class DT2WServiceCannon : Service() {
                 update()
             }
         }
-    }
-
-    companion object {
-        private const val TAG = "DT2WServiceCannon"
     }
 }
