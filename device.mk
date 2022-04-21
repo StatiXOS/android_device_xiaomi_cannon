@@ -202,8 +202,6 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
     android.hidl.memory.block@1.0 \
     android.hidl.allocator@1.0.vendor:64
 
