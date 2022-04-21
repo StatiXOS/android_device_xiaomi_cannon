@@ -363,20 +363,7 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    capture.sh \
-    capture_headsetmic.sh \
     mishow.sh \
-    playback.sh \
-    playback_headset.sh \
-    setup_headsetmic2headphone.sh \
-    setup_headsetmic2rcv.sh \
-    setup_mainmic2headphone.sh \
-    setup_rcv2mainmic.sh \
-    setup_rcv2topmic.sh \
-    setup_topmic2headphone.sh \
-    teardown_loopback.sh \
-    tp_data_collect.sh \
-    tp_selftest.sh \
     init.dt2w.sh \
     factory_init.connectivity.rc \
     factory_init.project.rc \
