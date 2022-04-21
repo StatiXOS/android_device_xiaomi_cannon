@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2021 StatiX
+    SPDX-License-Identifer: GPL-2.0-only
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+    <!-- Display cutout configuration -->
+    <string name="config_mainBuiltInDisplayCutout">
+        M -939,0 H -1080 V 99 H -939 V 0 Z@right
+    </string>
+
+    <!-- Height of the status bar -->
+    <dimen name="status_bar_height">111.0px</dimen>
+
+    <!-- Radius of the software rounded corners at the top of the display in its natural
+        orientation. If zero, the value of rounded_corner_radius is used. -->
+    <dimen name="rounded_corner_radius_top">106.0px</dimen>
+
+    <!-- Radius of the software rounded corners at the bottom of the display in its natural
+        orientation. If zero, the value of rounded_corner_radius is used. -->
+    <dimen name="rounded_corner_radius_bottom">104.0px</dimen>
+</resources>
