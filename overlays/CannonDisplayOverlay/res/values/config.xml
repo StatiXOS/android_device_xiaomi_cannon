@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2021 StatiX
+    SPDX-License-Identifer: GPL-2.0-only
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+    <!-- Whether the display cutout region of the main built-in display should be forced to
+         black in software (to avoid aliasing or emulate a cutout that is not physically existent). -->
+    <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
+
+    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
+         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+     for debouncing the light sensor.  Different constants are used to debounce the light sensor
+     when adapting to brighter or darker environments.  This parameter controls how quickly
+     brightness changes occur in response to an observed change in light level that exceeds the
+     hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
+
+    <!-- Fast brightness animation ramp rate in brightness units per second-->
+    <integer name="config_brightness_ramp_rate_fast">2466</integer>
+
+    <!-- Slow brightness animation ramp rate in brightness units per second-->
+    <integer name="config_brightness_ramp_rate_slow">1973</integer>
+
+    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_ambientThresholdLevels. The brightening threshold is calculated as
+         lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
+         the screen brightness is recalculated. See the config_ambientThresholdLevels
+         description for how the constraint value is chosen. -->
+    <integer-array name="config_ambientBrighteningThresholds">
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>30</item>
+        <item>100</item>
+        <item>400</item>
+        <item>600</item>
+        <item>1000</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_ambientThresholdLevels. The darkening threshold is calculated as
+         lux * (1.0f - CONSTRAINT_VALUE). When the current lux is lower than this threshold,
+         the screen brightness is recalculated. See the config_ambientThresholdLevels
+         description for how the constraint value is chosen. -->
+    <integer-array name="config_ambientDarkeningThresholds">
+        <item>800</item>
+        <item>800</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+    </integer-array>
+
+    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
+         values by calculating the index to use for lookup and then setting the constraint value
+         to the corresponding value of the array. The new brightening hysteresis constraint value
+         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
+         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
+
+         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
+         condition                       calculated index
+         value < level[0]                0
+         level[n] <= value < level[n+1]  n+1
+         level[MAX] <= value             MAX+1 -->
+    <integer-array name="config_ambientThresholdLevels">
+        <item>2</item>
+        <item>10</item>
+        <item>30</item>
+        <item>100</item>
+        <item>800</item>
+        <item>2000</item>
+        <item>4000</item>
+    </integer-array>
+
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessDisplayValuesNits">
+        <item>5</item>
+        <item>5</item>
+        <item>6</item>
+        <item>15</item>
+        <item>21</item>
+        <item>27</item>
+        <item>36</item>
+        <item>52</item>
+        <item>71</item>
+        <item>87</item>
+        <item>97</item>
+        <item>98</item>
+        <item>98</item>
+        <item>98</item>
+        <item>99</item>
+        <item>99</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>101</item>
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>103</item>
+        <item>103</item>
+        <item>106</item>
+        <item>108</item>
+        <item>110</item>
+        <item>112</item>
+        <item>114</item>
+        <item>116</item>
+        <item>118</item>
+        <item>119</item>
+        <item>122</item>
+        <item>123</item>
+        <item>125</item>
+        <item>128</item>
+        <item>130</item>
+        <item>131</item>
+        <item>134</item>
+        <item>136</item>
+        <item>137</item>
+        <item>140</item>
+        <item>142</item>
+        <item>144</item>
+        <item>169</item>
+        <item>196</item>
+        <item>222</item>
+        <item>248</item>
+        <item>270</item>
+        <item>300</item>
+        <item>320</item>
+        <item>335</item>
+        <item>407</item>
+        <item>472</item>
+        <item>500</item>
+        <item>523</item>
+        <item>546</item>
+    </integer-array>
+
+    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
+         The N entries of this array define N  1 zones as follows:
+
+         Zone 0:        0 <= LUX < array[0]
+         Zone 1:        array[0] <= LUX < array[1]
+         ...
+         Zone N:        array[N - 1] <= LUX < array[N]
+         Zone N + 1     array[N] <= LUX < infinity
+
+         Must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>120</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>220</item>
+        <item>240</item>
+        <item>260</item>
+        <item>280</item>
+        <item>300</item>
+        <item>320</item>
+        <item>340</item>
+        <item>360</item>
+        <item>380</item>
+        <item>400</item>
+        <item>420</item>
+        <item>440</item>
+        <item>460</item>
+        <item>480</item>
+        <item>500</item>
+        <item>700</item>
+        <item>900</item>
+        <item>1100</item>
+        <item>1300</item>
+        <item>1500</item>
+        <item>1700</item>
+        <item>1900</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+    </integer-array>
+
+    <!-- The maximum range of gamma adjustment possible using the screen
+         auto-brightness adjustment setting. -->
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">100.0%</fraction>
+
+    <!-- User activity timeout: Maximum screen dim duration as a percentage of screen off timeout.
+
+         This resource is similar to config_maximumScreenDimDuration but the maximum
+         screen dim duration is defined as a ratio of the overall screen off timeout
+         instead of as an absolute value in milliseconds.  This is useful for reducing
+         the dim duration when the screen off timeout is very short.
+
+         When computing the screen dim duration, the power manager uses the lesser
+         of the effective durations expressed by config_maximumScreenDimDuration and
+         config_maximumScreenDimRatio.
+
+         This value must be between 0% and 100%.  If the value is zero, the screen will not
+         dim before the device goes to sleep.
+    -->
+    <fraction name="config_maximumScreenDimRatio">29.999996%</fraction>
+
+    <!-- Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <integer name="config_screenBrightnessDim">20</integer>
+
+    <!-- Sets the minimum and maximum tilt tolerance for each possible rotation.
+         This array consists of 4 pairs of values which specify the minimum and maximum
+         tilt angle at which the device will transition into each rotation.
+
+         The tilt angle represents the direction in which the plane of the screen is facing;
+         it is also known as the angle of elevation.
+
+           -90 degree tilt means that the screen is facing straight down
+                           (the device is being held overhead upside-down)
+             0 degree tilt means that the screen is facing outwards
+                           (the device is being held vertically)
+            90 degree tilt means that the screen is facing straight up
+                           (the device is resting on a flat table)
+
+        The default tolerances are set conservatively such that the device is more
+        likely to remain in its natural orientation than rotate into a counterclockwise,
+        clockwise, or reversed posture (with an especially strong bias against the latter)
+        to prevent accidental rotation while carrying the device in hand.
+
+        These thresholds may need to be tuned when the device is intended to be
+        mounted into a dock with a particularly shallow profile wherein rotation
+        would ordinarily have been suppressed.
+
+        It is helpful to consider the desired behavior both when the device is being
+        held at a positive tilt (typical case) vs. a negative tilt (reading overhead in
+        bed) since they are quite different.  In the overhead case, we typically want
+        the device to more strongly prefer to retain its current configuration (in absence
+        of a clear indication that a rotation is desired) since the user's head and neck may
+        be held at an unusual angle.
+    -->
+    <integer-array name="config_autoRotationTiltTolerance">
+        <item>-25</item>
+        <item>70</item>
+        <item>-25</item>
+        <item>65</item>
+        <item>-25</item>
+        <item>60</item>
+        <item>-25</item>
+        <item>65</item>
+    </integer-array>
+    
+    <!-- The nominal white coordinates, in CIE1931 XYZ color space, for Display White Balance to
+         use in its calculations. AWB will adapt this white point to the target ambient white
+         point. The array must include a total of 3 float values (X, Y, Z) -->
+    <string-array name="config_displayWhiteBalanceDisplayNominalWhite">
+        <item>0.950456</item>
+        <item>1.000000</item>
+        <item>1.089058</item>
+    </string-array>
+
+    <!-- The display primaries, in CIE1931 XYZ color space, for display
+         white balance to use in its calculations. The array must include a total of 12 float
+         values: 3 values per color (X, Y, Z) and 4 colors (R, G, B, W) -->
+    <string-array name="config_displayWhiteBalanceDisplayPrimaries">
+        <item>0.412315</item>
+        <item>0.212600</item>
+        <item>0.019327</item>
+        <item>0.357600</item>
+        <item>0.715200</item>
+        <item>0.119200</item>
+        <item>0.180500</item>
+        <item>0.072200</item>
+        <item>0.950633</item>
+        <item>0.950456</item>
+        <item>1.000000</item>
+        <item>1.089058</item>
+    </string-array>
+
+    <!-- Enable Night display, which requires HWC 2.0. -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+
+    <string-array name="config_nightDisplayColorTemperatureCoefficients">
+        <item>0.0</item>
+        <item>0.0</item>
+        <item>1.0</item>
+        <item>-0.00000000962353339</item>
+        <item>0.000153045476</item>
+        <item>0.390782778</item>
+        <item>-0.0000000189359041</item>
+        <item>0.000302412211</item>
+        <item>-0.198650895</item>
+    </string-array>
+
+    <string-array name="config_nightDisplayColorTemperatureCoefficientsNative">
+        <item>0.0</item>
+        <item>0.0</item>
+        <item>1.0</item>
+        <item>-0.00000000962353339</item>
+        <item>0.000153045476</item>
+        <item>0.390782778</item>
+        <item>-0.0000000189359041</item>
+        <item>0.000302412211</item>
+        <item>-0.198650895</item>
+    </string-array>
+
+    <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
+    <!-- Specifies whether to decouple the interactive state of the device from the display on/off state. -->
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+
+    <!-- Screen brightness when dozing. -->
+    <integer name="config_screenBrightnessDoze">49</integer>
+
+    <!-- Whether the always on display mode is available. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Disable AOD by default -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+    <!-- True if the display hardware only has brightness buckets rather than a full range of
+         backlight values -->
+    <bool name="config_displayBrightnessBucketsInDoze">true</bool>
+
+    <!-- List supported color modes. -->
+    <integer-array name="config_availableColorModes">
+        <item>0</item> <!-- COLOR_MODE_NATURAL -->
+        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
+    </integer-array>
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
+
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+</resources>
