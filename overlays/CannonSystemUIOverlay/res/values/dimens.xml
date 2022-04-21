@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2022 StatiX
+    SPDX-License-Identifer: GPL-2.0-only
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- the padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">2.5dp</dimen>
+
+    <!-- the padding on the start of the statusbar -->
+    <dimen name="status_bar_padding_start">0dp</dimen>
+
+    <!-- the padding on the end of the statusbar -->
+    <dimen name="status_bar_padding_end">12dp</dimen>
+
+    <!-- rounded corner content padding -->
+    <dimen name="rounded_corner_content_padding">7.0dip</dimen>
+
+    <!-- Location on the screen of the center of the physical power button. -->
+    <dimen name="physical_power_button_center_screen_location_y">1030px</dimen>
+
+    <!-- Location on the screen of the center of the physical volume up/down buttons.
+         Cannon does not have separate volume buttons-->
+    <dimen name="physical_volume_up_button_center_screen_location_y">480px</dimen>
+    <dimen name="physical_volume_down_button_center_screen_location_y">660px</dimen>
+</resources>
