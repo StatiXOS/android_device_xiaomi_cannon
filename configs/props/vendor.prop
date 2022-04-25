@@ -128,6 +128,7 @@ ro.lmk.low=1000
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
+debug.stagefright.omx_default_rank=512
 
 # Mediatek
 ro.vendor.mediatek.platform=MT6853
