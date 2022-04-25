@@ -27,3 +27,6 @@ get_prop(hal_fingerprint_default, vendor_system_prop)
 set_prop(hal_fingerprint_default, vendor_system_prop)
 get_prop(hal_fingerprint_default, vendor_fp_prop)
 set_prop(hal_fingerprint_default, vendor_fp_prop)
+
+# Allow fingerprint HAL to create netlink socket
+allow hal_fingerprint_default hal_fingerprint_default:netlink_socket create;
