@@ -134,6 +134,11 @@ ro.vendor.mediatek.platform=MT6853
 ro.vendor.have_aeev_feature=1
 ro.vendor.mtk_exchange_support=1
 
+# Netflix
+ro.netflix.channel=497730f0-ad4b-11e7-95a4-c7ad113ce187
+ro.netflix.signup=1
+ro.netflix.bsp_rev=MTK6853-32100-1
+
 # Neural Networks
 ro.vendor.mtk_nn_support=1
 ro.vendor.mtk_nn.option=A,B,E,F,Z
