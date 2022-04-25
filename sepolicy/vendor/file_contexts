@@ -10,6 +10,7 @@
 /vendor/bin/hw/mfp-daemon			   u:object_r:hal_fingerprint_default_exec:s0
 
 # Secure Element
+/dev/p73                                                       u:object_r:nfc_device:s0
 /vendor/bin/hw/vendor\.microtrust\.hardware\.se@1\.0-service   u:object_r:hal_secure_element_default_exec:s0
 
 # Vibrator
