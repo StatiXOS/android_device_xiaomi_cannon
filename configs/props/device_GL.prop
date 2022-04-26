@@ -1,6 +1,7 @@
 #
 # Cannong specific props
 #
+ro.boot.product.hardware.sku=cannong
 ro.build.product=cannong
 ro.product.board=cannong
 ro.product.bootimage.device=cannong
