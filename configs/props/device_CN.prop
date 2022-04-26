@@ -1,6 +1,7 @@
 #
 # Cannon specific props
 #
+ro.boot.product.hardware.sku=cannon
 ro.build.product=cannon
 ro.product.board=cannon
 ro.product.bootimage.device=cannon
