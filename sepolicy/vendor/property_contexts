@@ -1,3 +1,9 @@
+# Audio
+audio.adm.buffering.ms                                  u:object_r:vendor_audio_prop:s0
+audio_hal.period_multiplier                             u:object_r:vendor_audio_prop:s0
+vendor.audio.spkcal.copy.inhal                          u:object_r:vendor_audio_prop:s0
+
+# Camera
 persist.vendor.camera.mi.module.info                    u:object_r:vendor_oem_camera_prop:s0
 persist.vendor.camera.mi.dualcal.state                  u:object_r:vendor_oem_camera_prop:s0
 demo.hole						u:object_r:vendor_oem_camera_prop:s0
