@@ -19,4 +19,7 @@
         <permission name="android.permission.CHANGE_WIFI_STATE"/>
         <permission name="android.permission.NETWORK_SIGNAL_STRENGTH_WAKEUP"/>
     </privapp-permissions>
+    <privapp-permissions package="com.android.cellbroadcastreceiver.module">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+    </privapp-permissions>
 </permissions>
