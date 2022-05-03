@@ -29,4 +29,4 @@ get_prop(hal_fingerprint_default, vendor_fp_prop)
 set_prop(hal_fingerprint_default, vendor_fp_prop)
 
 # Allow fingerprint HAL to create netlink socket
-allow hal_fingerprint_default hal_fingerprint_default:netlink_socket create;
+allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
