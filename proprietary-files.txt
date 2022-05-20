@@ -1809,6 +1809,7 @@ vendor/etc/.tp/.thermal_policy_08
 vendor/etc/.tp/thermal.conf
 vendor/etc/.tp/thermal.off.conf
 vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc
+system/init.mi_thermald.rc:vendor/etc/init/init.mi_thermald.rc
 vendor/etc/init/init.thermal.rc
 vendor/etc/init/init.thermal_manager.rc
 vendor/etc/init/init.thermalloadalgod.rc
