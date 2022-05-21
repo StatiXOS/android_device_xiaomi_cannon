@@ -32,9 +32,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := cannon,cannong
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := cannon
 TARGET_NO_BOOTLOADER := true
