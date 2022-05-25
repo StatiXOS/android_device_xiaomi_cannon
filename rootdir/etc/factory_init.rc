@@ -659,26 +659,12 @@ service ueventd /system/bin/ueventd
     critical
     seclabel u:r:ueventd:s0
 
-service console /system/bin/sh
-    class core
-    console
-    disabled
-    user shell
-    group shell log readproc
-    seclabel u:r:shell:s0
-
 on property:sys.powerctl=*
     powerctl ${sys.powerctl}
 
 #Log too much setting
 on property:ro.vendor.mtklog_internal=1
     setprop vendor.logmuch.value 10000
-
-on property:ro.debuggable=1
-    # Give writes to anyone for the trace folder on debug builds.
-    # The folder is used to store method traces.
-    chmod 0773 /data/misc/trace
-    start console
 
 # adbd is controlled via property triggers in init.<platform>.usb.rc
 service adbd /apex/com.android.adbd/bin/adbd --root_seclabel=u:r:su:s0
