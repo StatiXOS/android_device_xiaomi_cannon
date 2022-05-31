@@ -1612,8 +1612,6 @@ system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
 system_ext/lib64/vendor.mediatek.hardware.power@2.0.so
 system_ext/lib64/vendor.mediatek.hardware.power@2.1.so
-vendor/bin/hw/power_native_test_v_1_0
-vendor/bin/hw/power_native_test_v_1_1
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/gbe
 vendor/etc/init/gbe.rc
