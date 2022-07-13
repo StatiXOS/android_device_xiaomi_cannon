@@ -33,11 +33,6 @@ service permission_check /vendor/bin/permission_check
     group system radio
     oneshot
 
-service vendor.ccci_fsd /vendor/bin/ccci_fsd 0
-    user radio
-    group radio system
-    oneshot
-
 service ccci_mdinit /vendor/bin/ccci_mdinit 0
     user system
     group radio system
