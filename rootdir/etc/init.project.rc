@@ -15,6 +15,10 @@ on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
 
+#Turbo sched
+    chmod 0666 /sys/module/migt/parameters/mi_viptask
+    restorecon /sys/module/migt/parameters/mi_viptask
+
 #thermal
 chown system system /sys/class/thermal/thermal_message/sconfig
 
@@ -48,11 +52,20 @@ chown system system /sys/class/thermal/thermal_message/sconfig
     mkdir /mnt/vendor/persist/camera/ 0777 system camera
     mkdir /data/vendor/camera/ 0777 system camera
 # for intsense bokeh use
-    mkdir /data/vendor/camera/model 0776 system camera
-    mkdir /data/vendor/camera/model/dof_model 0776 system camera
-    mkdir /data/vendor/camera/model/rt_model 0776 system camera
+    mkdir /data/vendor/camera/model 0777 system camera
+    mkdir /data/vendor/camera/model/dof_model 0777 system camera
+    mkdir /data/vendor/camera/model/rt_model 0777 system camera
+    copy /vendor/etc/camera/model/dof_model/cache_data /data/vendor/camera/model/dof_model/cache_data
+    copy /vendor/etc/camera/model/dof_model/model_mdl_cache /data/vendor/camera/model/dof_model/model_mdl_cache
+    copy /vendor/etc/camera/model/dof_model/segment_model /data/vendor/camera/model/dof_model/segment_model
+    chmod 0777 /data/vendor/camera/model/dof_model/cache_data
+    chmod 0777 /data/vendor/camera/model/dof_model/model_mdl_cache
+    chmod 0777 /data/vendor/camera/model/dof_model/segment_model
+    chown system camera /data/vendor/camera/model/dof_model/cache_data
+    chown system camera /data/vendor/camera/model/dof_model/model_mdl_cache
+    chown system camera /data/vendor/camera/model/dof_model/segment_model
 # for mibokeh use
-    mkdir /data/vendor/camera/mibokeh 0776 system camera
+    mkdir /data/vendor/camera/mibokeh 0777 system camera
 #SMB
     chown system system /proc/smb/ScreenComm
     chmod 0660 /proc/smb/ScreenComm
