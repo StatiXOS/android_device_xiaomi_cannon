@@ -3,18 +3,24 @@
 # IMPORTANT: Do not create world writable files or directories.
 # This is a common source of Android security bugs.
 #
-import /system/etc/init/hw/vendor_init_as_system.rc
+import /system_ext/etc/init/hw/vendor_init_as_system.rc
 import /vendor/etc/init/hw/factory_init.connectivity.rc
 import /vendor/etc/init/hw/factory_init.thp.rc
 import /init.environ.rc
 import /vendor/etc/init/trustonic.rc
 import /vendor/etc/init/hw/init.nvdata.rc
 import /vendor/etc/init/microtrust.rc
+import /vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
+import /vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
+import /vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
+import /vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
+import /vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
+import /vendor/etc/init/microtrust.init_thh.rc
 import /vendor/etc/init/hw/init.aee.rc
 import /system_ext/etc/init/hw/init.aee.rc
 import /vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
-import /vendor/etc/init/android.hardware.boot@1.1-service.rc
-import /vendor/etc/init/android.hardware.boot@1.1-service-lazy.rc
+import /vendor/etc/init/android.hardware.boot@1.2-service.rc
+import /vendor/etc/init/android.hardware.boot@1.2-service-lazy.rc
 import /vendor/etc/init/vendor.mediatek.hardware.thp@1.0-service.rc
 
 #NFC
@@ -52,7 +58,8 @@ on early-init
     mkdir /linkerconfig/default 0755
 
     # Generate ld.config.txt for early executed processes
-    exec -- /system/bin/linkerconfig --target /linkerconfig/bootstrap
+    exec -- /system/bin/bootstrap/linkerconfig --target /linkerconfig/bootstrap
+
     chmod 644 /linkerconfig/bootstrap/ld.config.txt
     copy /linkerconfig/bootstrap/ld.config.txt /linkerconfig/default/ld.config.txt
     chmod 644 /linkerconfig/default/ld.config.txt
@@ -68,10 +75,16 @@ on early-init
     # the libraries are available to the processes started after this statement.
     exec_start apexd-bootstrap
 
+    # Generate linker config based on apex mounted in bootstrap namespace
+    update_linker_config
+
 #INTERNAL_START
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 #INTERNAL_END
+
+    # initialize vendor.all.modules.ready to 1 here to prevent NOT GKI project blocked
+    setprop vendor.all.modules.ready 1
 
 on init
 
@@ -338,7 +351,7 @@ on fs
 #INTERNAL_START
     write /proc/bootprof "INIT:Mount_START"
     wait_for_prop hwservicemanager.ready "true"
-    start vendor.boot-hal-1-1
+    start vendor.boot-hal-1-2
     mount_all --early
     write /proc/bootprof "INIT:Mount_END"
 #INTERNAL_END
@@ -350,7 +363,6 @@ on post-fs
     start system_suspend
     start merged_hal_service
     start capi-2-0
-    start power-hal-1-0
     # Once everything is setup, no need to modify /.
     # The bind+ro combination avoids modifying any other mount flags.
     # mount rootfs rootfs / remount bind ro
@@ -433,9 +445,11 @@ on late-fs
 
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
+    wait_for_prop vendor.all.modules.ready 1
+    write /proc/bootprof "modprobe: Load_Module_DONE"
 
-	#Thermal
-	mkdir /data/.tp/ 0775 system system
+    #Thermal
+    mkdir /data/.tp/ 0775 system system
 
     # symlink to bugreport storage location
     rm /data/bugreports
@@ -507,6 +521,9 @@ on post-fs-data
 
 
     mkdir /data/amit/
+
+    # AudioDump
+    mkdir /data/vendor/audiohal
 
     # GPIO
     chmod 0666 /dev/mtgpio
@@ -700,11 +717,6 @@ service thermal_manager /vendor/bin/thermal_manager
 service permission_check /vendor/bin/permission_check
     user root
     group system radio
-    oneshot
-
-service vendor.ccci_fsd /vendor/bin/ccci_fsd 0
-    user radio
-    group radio system
     oneshot
 
 service ccci_mdinit /vendor/bin/ccci_mdinit 0
