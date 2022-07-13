@@ -370,11 +370,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mishow.sh \
     init.dt2w.sh \
+    factory_init.connectivity.common.rc \
     factory_init.connectivity.rc \
     factory_init.project.rc \
     factory_init.rc \
     init.aee.rc \
     init.ago.rc \
+    init_connectivity.rc \
+    init.connectivity.common.rc \
+    init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6853.rc \
@@ -383,6 +387,7 @@ PRODUCT_PACKAGES += \
     init.sensor_2_0.rc \
     init.dt2w.rc \
     init.recovery.mt6853.rc \
+    meta_init.connectivity.common.rc \
     meta_init.connectivity.rc \
     meta_init.modem.rc \
     meta_init.project.rc \
